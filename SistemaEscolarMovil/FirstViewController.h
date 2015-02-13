@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JSONHTTPClient.h"
+@interface FirstViewController : UIViewController <JSONHTTPClientDelegate>
 
-@interface FirstViewController : UIViewController
 
 
 @end

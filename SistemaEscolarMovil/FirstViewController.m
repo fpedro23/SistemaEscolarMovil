@@ -7,15 +7,17 @@
 //
 
 #import "FirstViewController.h"
+#import "ElementoEscolar.h"
 
 @interface FirstViewController ()
-
+@property NSArray *elementsData;
 @end
 
 @implementation FirstViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getAll];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E73D2CE72B10618F92C442A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 243C120D1E64FD7FE779EC74 /* libPods.a */; };
 		EB07BE491A8D727F00622C7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07BE481A8D727F00622C7D /* main.m */; };
 		EB07BE4C1A8D727F00622C7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07BE4B1A8D727F00622C7D /* AppDelegate.m */; };
 		EB07BE4F1A8D727F00622C7D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07BE4E1A8D727F00622C7D /* FirstViewController.m */; };
@@ -15,6 +16,8 @@
 		EB07BE571A8D727F00622C7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB07BE561A8D727F00622C7D /* Images.xcassets */; };
 		EB07BE5A1A8D727F00622C7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB07BE581A8D727F00622C7D /* LaunchScreen.xib */; };
 		EB07BE661A8D727F00622C7D /* SistemaEscolarMovilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07BE651A8D727F00622C7D /* SistemaEscolarMovilTests.m */; };
+		EB21820A1A8D8A4400E684C0 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2182091A8D8A4400E684C0 /* JSONHTTPClient.m */; };
+		EBF0F9BA1A8D76E300B54D57 /* ElementoEscolar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		243C120D1E64FD7FE779EC74 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F7A0107A406A617082E72B0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C39D2D3DE4B38EB36823FCA8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EB07BE431A8D727F00622C7D /* SistemaEscolarMovil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SistemaEscolarMovil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB07BE471A8D727F00622C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB07BE481A8D727F00622C7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,6 +49,10 @@
 		EB07BE5F1A8D727F00622C7D /* SistemaEscolarMovilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SistemaEscolarMovilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB07BE641A8D727F00622C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB07BE651A8D727F00622C7D /* SistemaEscolarMovilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SistemaEscolarMovilTests.m; sourceTree = "<group>"; };
+		EB2182081A8D8A4400E684C0 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
+		EB2182091A8D8A4400E684C0 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElementoEscolar.h; path = ../ElementoEscolar.h; sourceTree = "<group>"; };
+		EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElementoEscolar.m; path = ../ElementoEscolar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73D2CE72B10618F92C442A4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,12 +74,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A3B547E023762FA5BA1BBC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				243C120D1E64FD7FE779EC74 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8103EEB15A8B6EBDA0032687 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F7A0107A406A617082E72B0 /* Pods.debug.xcconfig */,
+				C39D2D3DE4B38EB36823FCA8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EB07BE3A1A8D727F00622C7D = {
 			isa = PBXGroup;
 			children = (
 				EB07BE451A8D727F00622C7D /* SistemaEscolarMovil */,
 				EB07BE621A8D727F00622C7D /* SistemaEscolarMovilTests */,
 				EB07BE441A8D727F00622C7D /* Products */,
+				8103EEB15A8B6EBDA0032687 /* Pods */,
+				0A3B547E023762FA5BA1BBC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +114,8 @@
 		EB07BE451A8D727F00622C7D /* SistemaEscolarMovil */ = {
 			isa = PBXGroup;
 			children = (
+				EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */,
+				EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */,
 				EB07BE4A1A8D727F00622C7D /* AppDelegate.h */,
 				EB07BE4B1A8D727F00622C7D /* AppDelegate.m */,
 				EB07BE4D1A8D727F00622C7D /* FirstViewController.h */,
@@ -94,6 +126,8 @@
 				EB07BE561A8D727F00622C7D /* Images.xcassets */,
 				EB07BE581A8D727F00622C7D /* LaunchScreen.xib */,
 				EB07BE461A8D727F00622C7D /* Supporting Files */,
+				EB2182081A8D8A4400E684C0 /* JSONHTTPClient.h */,
+				EB2182091A8D8A4400E684C0 /* JSONHTTPClient.m */,
 			);
 			path = SistemaEscolarMovil;
 			sourceTree = "<group>";
@@ -131,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB07BE691A8D727F00622C7D /* Build configuration list for PBXNativeTarget "SistemaEscolarMovil" */;
 			buildPhases = (
+				9F3F942CB7376361A27F912E /* Check Pods Manifest.lock */,
 				EB07BE3F1A8D727F00622C7D /* Sources */,
 				EB07BE401A8D727F00622C7D /* Frameworks */,
 				EB07BE411A8D727F00622C7D /* Resources */,
+				C2B96AA87D373773DDD081C6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,12 +255,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9F3F942CB7376361A27F912E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2B96AA87D373773DDD081C6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB07BE3F1A8D727F00622C7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB21820A1A8D8A4400E684C0 /* JSONHTTPClient.m in Sources */,
 				EB07BE521A8D727F00622C7D /* SecondViewController.m in Sources */,
+				EBF0F9BA1A8D76E300B54D57 /* ElementoEscolar.m in Sources */,
 				EB07BE4C1A8D727F00622C7D /* AppDelegate.m in Sources */,
 				EB07BE4F1A8D727F00622C7D /* FirstViewController.m in Sources */,
 				EB07BE491A8D727F00622C7D /* main.m in Sources */,
@@ -349,6 +420,7 @@
 		};
 		EB07BE6A1A8D727F00622C7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F7A0107A406A617082E72B0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SistemaEscolarMovil/Info.plist;
@@ -359,6 +431,7 @@
 		};
 		EB07BE6B1A8D727F00622C7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C39D2D3DE4B38EB36823FCA8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SistemaEscolarMovil/Info.plist;
@@ -420,6 +493,7 @@
 				EB07BE6B1A8D727F00622C7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB07BE6C1A8D727F00622C7D /* Build configuration list for PBXNativeTarget "SistemaEscolarMovilTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +502,7 @@
 				EB07BE6E1A8D727F00622C7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
