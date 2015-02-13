@@ -38,14 +38,10 @@
 
 
 -(void)performPOSTRequestWithParameters:(NSDictionary *)parameters toServlet:(NSString *)servletName withOptions:(NSString *)option{
-    
+
     self.servletName = servletName;
     
-    NSString * const kServletConsultarTipoObraPrograma  = @"readCircular";
-
-    
-    
-    [self POST:kServletConsultarTipoObraPrograma parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self POST:servletName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSArray *JSONResponse = responseObject;
         //Estados

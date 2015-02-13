@@ -11,13 +11,36 @@
 
 @interface FirstViewController ()
 @property NSArray *elementsData;
+@property (nonatomic, strong) JSONHTTPClient *jsonClient;
+
 @end
 
 @implementation FirstViewController
 
+-(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didFailResponseWithError:(NSError *)error{
+    
+    NSLog(@"Error : %@", [error localizedDescription]);
+}
+
+-(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didResponseToElements:(id)response{
+    self.elementsData = response;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getAll];
+    _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
+    _jsonClient.delegate = self;
+    
+    NSDictionary* dict = @{
+                          @"mobile": @"true"
+                          };
+    
+    
+    
+    [_jsonClient performPOSTRequestWithParameters:dict toServlet:@"readCircular"                     withOptions:nil];
+//http://192.168.100.36:8080/SistemaEscolar/readCircular?mobile=true
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

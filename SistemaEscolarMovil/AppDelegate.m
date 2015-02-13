@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ElementoEscolar.h"
-#import "JSONHTTPClient.h"
 
 @interface AppDelegate ()
 @end
