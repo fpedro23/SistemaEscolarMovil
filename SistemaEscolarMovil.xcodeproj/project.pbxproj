@@ -10,13 +10,14 @@
 		E73D2CE72B10618F92C442A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 243C120D1E64FD7FE779EC74 /* libPods.a */; };
 		EB07BE491A8D727F00622C7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07BE481A8D727F00622C7D /* main.m */; };
 		EB07BE4C1A8D727F00622C7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07BE4B1A8D727F00622C7D /* AppDelegate.m */; };
-		EB07BE4F1A8D727F00622C7D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07BE4E1A8D727F00622C7D /* FirstViewController.m */; };
 		EB07BE521A8D727F00622C7D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07BE511A8D727F00622C7D /* SecondViewController.m */; };
 		EB07BE551A8D727F00622C7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB07BE531A8D727F00622C7D /* Main.storyboard */; };
 		EB07BE571A8D727F00622C7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB07BE561A8D727F00622C7D /* Images.xcassets */; };
 		EB07BE5A1A8D727F00622C7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB07BE581A8D727F00622C7D /* LaunchScreen.xib */; };
 		EB07BE661A8D727F00622C7D /* SistemaEscolarMovilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07BE651A8D727F00622C7D /* SistemaEscolarMovilTests.m */; };
 		EB21820A1A8D8A4400E684C0 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2182091A8D8A4400E684C0 /* JSONHTTPClient.m */; };
+		EB25CA691A8DB3E6009011F2 /* AFNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EB25CA681A8DB3E6009011F2 /* AFNetworkActivityLogger.m */; };
+		EB25CA6C1A8DB93B009011F2 /* CircularesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB25CA6B1A8DB93B009011F2 /* CircularesTableViewController.m */; };
 		EBF0F9BA1A8D76E300B54D57 /* ElementoEscolar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +40,6 @@
 		EB07BE481A8D727F00622C7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB07BE4A1A8D727F00622C7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB07BE4B1A8D727F00622C7D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EB07BE4D1A8D727F00622C7D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		EB07BE4E1A8D727F00622C7D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		EB07BE501A8D727F00622C7D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		EB07BE511A8D727F00622C7D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		EB07BE541A8D727F00622C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +50,10 @@
 		EB07BE651A8D727F00622C7D /* SistemaEscolarMovilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SistemaEscolarMovilTests.m; sourceTree = "<group>"; };
 		EB2182081A8D8A4400E684C0 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
 		EB2182091A8D8A4400E684C0 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		EB25CA671A8DB3E6009011F2 /* AFNetworkActivityLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityLogger.h; sourceTree = "<group>"; };
+		EB25CA681A8DB3E6009011F2 /* AFNetworkActivityLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityLogger.m; sourceTree = "<group>"; };
+		EB25CA6A1A8DB93B009011F2 /* CircularesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularesTableViewController.h; sourceTree = "<group>"; };
+		EB25CA6B1A8DB93B009011F2 /* CircularesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularesTableViewController.m; sourceTree = "<group>"; };
 		EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElementoEscolar.h; path = ../ElementoEscolar.h; sourceTree = "<group>"; };
 		EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElementoEscolar.m; path = ../ElementoEscolar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,12 +117,14 @@
 		EB07BE451A8D727F00622C7D /* SistemaEscolarMovil */ = {
 			isa = PBXGroup;
 			children = (
+				EB25CA671A8DB3E6009011F2 /* AFNetworkActivityLogger.h */,
+				EB25CA681A8DB3E6009011F2 /* AFNetworkActivityLogger.m */,
 				EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */,
 				EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */,
 				EB07BE4A1A8D727F00622C7D /* AppDelegate.h */,
 				EB07BE4B1A8D727F00622C7D /* AppDelegate.m */,
-				EB07BE4D1A8D727F00622C7D /* FirstViewController.h */,
-				EB07BE4E1A8D727F00622C7D /* FirstViewController.m */,
+				EB25CA6A1A8DB93B009011F2 /* CircularesTableViewController.h */,
+				EB25CA6B1A8DB93B009011F2 /* CircularesTableViewController.m */,
 				EB07BE501A8D727F00622C7D /* SecondViewController.h */,
 				EB07BE511A8D727F00622C7D /* SecondViewController.m */,
 				EB07BE531A8D727F00622C7D /* Main.storyboard */,
@@ -295,9 +300,10 @@
 			files = (
 				EB21820A1A8D8A4400E684C0 /* JSONHTTPClient.m in Sources */,
 				EB07BE521A8D727F00622C7D /* SecondViewController.m in Sources */,
+				EB25CA691A8DB3E6009011F2 /* AFNetworkActivityLogger.m in Sources */,
 				EBF0F9BA1A8D76E300B54D57 /* ElementoEscolar.m in Sources */,
 				EB07BE4C1A8D727F00622C7D /* AppDelegate.m in Sources */,
-				EB07BE4F1A8D727F00622C7D /* FirstViewController.m in Sources */,
+				EB25CA6C1A8DB93B009011F2 /* CircularesTableViewController.m in Sources */,
 				EB07BE491A8D727F00622C7D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AFNetworkActivityLogger.h"
 
 @interface AppDelegate ()
 @end
@@ -14,6 +15,8 @@
 @implementation AppDelegate 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+
     return YES;
 }
 

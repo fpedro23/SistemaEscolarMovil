@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  CircularesTableViewController.h
 //  SistemaEscolarMovil
 //
 //  Created by Pedro Contreras Nava on 12/02/15.
@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JSONHTTPClient.h"
-@interface FirstViewController : UIViewController <JSONHTTPClientDelegate>
 
-
-
+@interface CircularesTableViewController : UITableViewController <JSONHTTPClientDelegate>
+@property NSArray *elementsData;
 @end
-

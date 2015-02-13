@@ -19,7 +19,7 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.168.100.36:8080/SistemaEscolar/"]]; //readCircular?mobile=true
+        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.168.100.5:8080/SistemaEscolar/"]]; //readCircular?mobile=true
     });
     
     return _sharedJSONAPIClient;
@@ -31,6 +31,7 @@
     
     if (self) {
         self.responseSerializer = [AFJSONResponseSerializer serializer];
+        self.requestSerializer =  [AFHTTPRequestSerializer serializer];
     }
     
     return self;
@@ -40,8 +41,8 @@
 -(void)performPOSTRequestWithParameters:(NSDictionary *)parameters toServlet:(NSString *)servletName withOptions:(NSString *)option{
 
     self.servletName = servletName;
-    
-    [self POST:servletName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+    self.parameters = parameters;
+    [self GET:servletName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSArray *JSONResponse = responseObject;
         //Estados
