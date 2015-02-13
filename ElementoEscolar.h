@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MTLModel.h"
-#import "Pods/Mantle/Mantle/MTLJSONAdapter.h"
+#import "MTLJSONAdapter.h"
 
 
 @interface ElementoEscolar : MTLModel <MTLJSONSerializing>

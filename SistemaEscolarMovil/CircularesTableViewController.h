@@ -11,4 +11,5 @@
 
 @interface CircularesTableViewController : UITableViewController <JSONHTTPClientDelegate>
 @property NSArray *elementsData;
+@property (strong,nonatomic) UIRefreshControl *updateControl;
 @end

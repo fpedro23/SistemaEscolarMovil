@@ -1,34 +1,32 @@
 //
-//  CircularesTableViewController.m
+//  AvisosTableViewController.m
 //  SistemaEscolarMovil
 //
-//  Created by Pedro Contreras Nava on 12/02/15.
+//  Created by Pedro Contreras Nava on 13/02/15.
 //  Copyright (c) 2015 Pedro Contreras Nava. All rights reserved.
 //
 
-#import "CircularesTableViewController.h"
+#import "AvisosTableViewController.h"
 #import "ElementoEscolar.h"
-
-@interface CircularesTableViewController ()
+@interface AvisosTableViewController ()
 @property JSONHTTPClient *jsonClient;
 @end
 
-@implementation CircularesTableViewController
-@synthesize updateControl;
+@implementation AvisosTableViewController
 
 -(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didFailResponseWithError:(NSError *)error{
     
     NSLog(@"Error : %@", [error localizedDescription]);
 }
 
--(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didResponseToElements:(id)response{
-    self.elementsData = response;
-    [self reloadData];
+-(void)viewDidAppear:(BOOL)animated{
+    _jsonClient.delegate = self;
 }
 
 
--(void)viewDidAppear:(BOOL)animated{
-    _jsonClient.delegate = self;
+-(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didResponseToElements:(id)response{
+    self.elementsData = response;
+    [self reloadData];
 }
 
 - (void)reloadData
@@ -37,7 +35,7 @@
     [self.tableView reloadData];
     
     // End the refreshing
-    if (updateControl) {
+    if (self.refreshControl) {
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"MMM d, h:mm a"];
@@ -45,33 +43,33 @@
         NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
                                                                     forKey:NSForegroundColorAttributeName];
         NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
-        updateControl.attributedTitle = attributedTitle;
+        self.refreshControl.attributedTitle = attributedTitle;
         
-        [updateControl endRefreshing];
+        [self.refreshControl endRefreshing];
     }
 }
 
 
--(void)getLatestCirculars{
-    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readCircular" withOptions:nil];
+-(void)getLatestAvisos{
+    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readAvisos" withOptions:nil];
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
     _jsonClient.delegate = self;
-    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readCircular" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readAvisos" withOptions:nil];
     //http://192.168.100.36:8080/SistemaEscolar/readCircular?mobile=true
     
-    updateControl = [[UIRefreshControl alloc] init];
-    updateControl.backgroundColor = [UIColor purpleColor];
-    updateControl.tintColor = [UIColor whiteColor];
-    [updateControl addTarget:self
-                            action:@selector(getLatestCirculars)
-                  forControlEvents:UIControlEventValueChanged];
     
-    [self.tableView addSubview:updateControl];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(getLatestAvisos)
+                  forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,7 +101,7 @@
     UILabel *titulo =(UILabel*)[cell.contentView viewWithTag:1];
     UILabel *fecha =(UILabel*)[cell.contentView  viewWithTag:2];
     UILabel *remitente =(UILabel*)[cell.contentView  viewWithTag:3];
-
+    
     
     
     // Configure the cell...
@@ -116,7 +114,6 @@
     
     return cell;
 }
-
 
 
 @end

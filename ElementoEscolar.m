@@ -8,7 +8,7 @@
 
 #import "ElementoEscolar.h"
 #import "NSValueTransformer+MTLPredefinedTransformerAdditions.h"
-#import "Pods/Mantle/Mantle/MTLValueTransformer.h"
+#import "MTLValueTransformer.h"
 
 
 @implementation ElementoEscolar
