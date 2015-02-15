@@ -10,7 +10,7 @@
 #import "JTCalendar.h"
 #import "JSONHTTPClient.h"
 
-@interface CalendarViewController : UIViewController <JTCalendarDataSource,JSONHTTPClientDelegate>
+@interface CalendarViewController : UIViewController <JTCalendarDataSource,JSONHTTPClientDelegate, UITableViewDataSource>
 
 
 @property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
@@ -20,7 +20,10 @@
 @property (strong,nonatomic) NSMutableDictionary *eventsByDate;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarContentViewHeight;
 @property NSArray *elementsData;
+@property NSMutableArray *dayEvents;
+
 @property JSONHTTPClient *jsonClient;
+@property (weak, nonatomic) IBOutlet UITableView *eventView;
 
 
 

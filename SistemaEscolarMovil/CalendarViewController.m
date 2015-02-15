@@ -22,6 +22,17 @@
     self.elementsData = response;
     [self createEvents];
     [self.calendar reloadData]; // Must be call in viewDidAppear
+    [self.eventView reloadData];
+}
+
+
+-(void)refreshTapped{
+    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readEvent" withOptions:nil];
+    [self createEvents];
+    [self.calendar reloadData]; // Must be call in viewDidAppear
+    [self.eventView reloadData];
+    [self calendarDidDateSelected:self.calendar date:[NSDate date]];
+    [self.calendar setCurrentDateSelected:[NSDate date]];
 }
 
 
@@ -34,9 +45,12 @@
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
     _jsonClient.delegate = self;
     [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readEvent" withOptions:nil];
-    
+    self.eventView.dataSource = self;
     self.calendar = [JTCalendar new];
+
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshTapped)];
     
+    [self.navigationItem setRightBarButtonItem:refreshButton];
     // All modifications on calendarAppearance have to be done before setMenuMonthsView and setContentView
     // Or you will have to call reloadAppearance
     {
@@ -116,9 +130,12 @@
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
 {
     NSString *key = [[self dateFormatter] stringFromDate:date];
-    NSArray *events = eventsByDate[key];
     
-    NSLog(@"Date: %@ - %ld events", date, [events count]);
+    
+    self.dayEvents = eventsByDate[key];
+    
+    NSLog(@"Date: %@ - %ld events", date, [self.dayEvents count]);
+    [self.eventView reloadData];
 }
 
 - (void)calendarDidLoadPreviousPage
@@ -160,14 +177,14 @@
                      }];
 }
 
-#pragma mark - Fake data
+#pragma mark -  Data
 
 - (NSDateFormatter *)dateFormatter
 {
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd-MM-yyyy";
+        dateFormatter.dateFormat = @"dd/MM/yyyy";
     }
     
     return dateFormatter;
@@ -175,7 +192,12 @@
 
 - (void)createEvents
 {
-    eventsByDate = [NSMutableDictionary new];
+    
+    if(!eventsByDate){
+        eventsByDate = [NSMutableDictionary new];
+    }else{
+        [eventsByDate removeAllObjects];
+    }
     
     for (ElementoEscolar *evento in self.elementsData) {
         NSString *key = [[self dateFormatter] stringFromDate:evento.fecha];
@@ -189,6 +211,32 @@
 
     }
 }
+
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
+    return [self.dayEvents count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    [cell.textLabel setText:[(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row] titulo]];
+    [cell.detailTextLabel setText:[(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row] remitente]];
+    
+
+    cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
 
 
 @end

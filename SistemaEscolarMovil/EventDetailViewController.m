@@ -9,5 +9,15 @@
 #import "EventDetailViewController.h"
 
 @implementation EventDetailViewController
+@synthesize elementoEscolar;
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    [self.labelTitulo setText:elementoEscolar.titulo];
+    [self.labelRemitente setText:elementoEscolar.remitente];
+    [self.contenidoTextView setText:elementoEscolar.contenido];
+
+    
+}
 
 @end

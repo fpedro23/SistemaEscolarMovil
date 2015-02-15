@@ -8,7 +8,7 @@
 
 #import "CircularesTableViewController.h"
 #import "ElementoEscolar.h"
-
+#import "EventDetailViewController.h"
 @interface CircularesTableViewController ()
 @property JSONHTTPClient *jsonClient;
 @end
@@ -94,7 +94,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    NSString *dateString = [NSDateFormatter localizedStringFromDate:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row]  fecha]
+   /* NSString *dateString = [NSDateFormatter localizedStringFromDate:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row]  fecha]
                                                           dateStyle:NSDateFormatterMediumStyle
                                                           timeStyle:NSDateFormatterNoStyle];
     dateString = [NSString stringWithFormat:@"Fecha de Publicación: %@" ,dateString];
@@ -112,11 +112,28 @@
     fecha.adjustsFontSizeToFitWidth = YES;
     cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
     [remitente setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] remitente]];
-    remitente.adjustsFontSizeToFitWidth =YES;
+    remitente.adjustsFontSizeToFitWidth =YES;*/
+    
+    
+    [cell.textLabel setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] titulo]];
+    [cell.detailTextLabel setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] remitente]];
+    cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    EventDetailViewController *destinationViewController = (EventDetailViewController *)segue.destinationViewController;
+    
+    if([sender isKindOfClass:[UITableViewCell class]]) {
+        NSIndexPath * indexPath = [self.tableView indexPathForCell:sender];
+        //Your code here
+        destinationViewController.elementoEscolar = [self.elementsData objectAtIndex:indexPath.row];
+        
+    }
+    
+}
 
 
 @end

@@ -131,8 +131,6 @@
 				EB1E9A521A8E6A7800984BDF /* View */,
 				EB07BE561A8D727F00622C7D /* Images.xcassets */,
 				EB07BE461A8D727F00622C7D /* Supporting Files */,
-				EB4A387D1A8E998C009ACA4E /* EventDetailViewController.h */,
-				EB4A387E1A8E998C009ACA4E /* EventDetailViewController.m */,
 			);
 			path = SistemaEscolarMovil;
 			sourceTree = "<group>";
@@ -175,14 +173,16 @@
 		EB1E9A501A8E6A5F00984BDF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EB25CA6A1A8DB93B009011F2 /* CircularesTableViewController.h */,
-				EB25CA6B1A8DB93B009011F2 /* CircularesTableViewController.m */,
+				EB4A387D1A8E998C009ACA4E /* EventDetailViewController.h */,
+				EB4A387E1A8E998C009ACA4E /* EventDetailViewController.m */,
 				EB1E9A531A8E6ABE00984BDF /* AvisosTableViewController.h */,
 				EB1E9A541A8E6ABE00984BDF /* AvisosTableViewController.m */,
 				EB2182081A8D8A4400E684C0 /* JSONHTTPClient.h */,
 				EB2182091A8D8A4400E684C0 /* JSONHTTPClient.m */,
 				EB1E9A581A8E711A00984BDF /* CalendarViewController.h */,
 				EB1E9A591A8E711B00984BDF /* CalendarViewController.m */,
+				EB25CA6A1A8DB93B009011F2 /* CircularesTableViewController.h */,
+				EB25CA6B1A8DB93B009011F2 /* CircularesTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

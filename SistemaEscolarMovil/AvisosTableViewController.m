@@ -92,7 +92,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    NSString *dateString = [NSDateFormatter localizedStringFromDate:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row]  fecha]
+    /*NSString *dateString = [NSDateFormatter localizedStringFromDate:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row]  fecha]
                                                           dateStyle:NSDateFormatterMediumStyle
                                                           timeStyle:NSDateFormatterNoStyle];
     dateString = [NSString stringWithFormat:@"Fecha de Publicación: %@" ,dateString];
@@ -110,7 +110,11 @@
     fecha.adjustsFontSizeToFitWidth = YES;
     cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
     [remitente setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] remitente]];
-    remitente.adjustsFontSizeToFitWidth =YES;
+    remitente.adjustsFontSizeToFitWidth =YES;*/
+    
+    [cell.textLabel setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] titulo]];
+    [cell.detailTextLabel setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] remitente]];
+    cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
