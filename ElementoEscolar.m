@@ -20,8 +20,8 @@
              @"idCircular" : @"idCircular",
              @"titulo" : @"titulo",
              @"fecha" : @"fecha",
-             @"remitente" : @"remitente",
-             @"contenido" : @"contenido" 
+             @"contenido" : @"contenido",
+             @"administrador" : @"administradoridAdministrador"
              };
 }
 
@@ -35,6 +35,10 @@
     } reverseBlock:^(NSDate *date) {
         return [dateFormatter stringFromDate:date];
     }];
+}
+
++ (NSValueTransformer *)administradorJSONTransformer {
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[Administrador class]];
 }
 
 

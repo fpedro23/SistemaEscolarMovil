@@ -8,6 +8,8 @@
 
 #import "CalendarViewController.h"
 #import "ElementoEscolar.h"
+#import "ElementoTableViewCell.h"
+#import "EventDetailViewController.h"
 
 @implementation CalendarViewController
 @synthesize eventsByDate;
@@ -46,6 +48,7 @@
     _jsonClient.delegate = self;
     [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readEvent" withOptions:nil];
     self.eventView.dataSource = self;
+    self.eventView.delegate = self;
     self.calendar = [JTCalendar new];
 
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshTapped)];
@@ -84,6 +87,8 @@
     [self.calendar setMenuMonthsView:self.calendarMenuView];
     [self.calendar setContentView:self.calendarContentView];
     [self.calendar setDataSource:self];
+    [self calendarDidDateSelected:self.calendar date:[NSDate date]];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -92,6 +97,7 @@
     _jsonClient.delegate = self;
 
     [self.calendar reloadData]; // Must be call in viewDidAppear
+    [self.eventView reloadData];
 }
 
 // Update the position of calendar when rotate the screen, call `calendarDidLoadPreviousPage` or `calendarDidLoadNextPage`
@@ -130,7 +136,7 @@
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
 {
     NSString *key = [[self dateFormatter] stringFromDate:date];
-    
+    self.selectedDate =[[self dateFormatterLong] stringFromDate:date];
     
     self.dayEvents = eventsByDate[key];
     
@@ -190,6 +196,18 @@
     return dateFormatter;
 }
 
+- (NSDateFormatter *)dateFormatterLong
+{
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [NSDateFormatter new];
+        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    }
+    
+    return dateFormatter;
+}
+
+
 - (void)createEvents
 {
     
@@ -225,16 +243,62 @@
     return [self.dayEvents count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+
+    return [self selectedDate];
+}
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    ElementoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ElementViewCell"];
     
-    [cell.textLabel setText:[(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row] titulo]];
-    [cell.detailTextLabel setText:[(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row] remitente]];
     
-
-    cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
+    NSString *dateString = [NSDateFormatter localizedStringFromDate:[(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row]  fecha]
+                                                          dateStyle:NSDateFormatterLongStyle
+                                                          timeStyle:NSDateFormatterNoStyle];
+    //dateString = [NSString stringWithFormat:@"Publicada el: %@" ,dateString];
+    
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TableCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.titleLabel.adjustsFontSizeToFitWidth = YES;
+    cell.titleLabel.text = [(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row] titulo];
+    cell.remitenteLabel.text = [[(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row] administrador]nombreAdministrador];
+    cell.fechaEmisionLabel.text = dateString;
+    
+    
+    //[cell.textLabel setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] titulo]];
+    
+    //[cell.detailTextLabel setText:[[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] administrador ]nombreAdministrador]];
+    
     return cell;
+}
+
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ElementoTableViewCell *cell = (ElementoTableViewCell*)[self.eventView cellForRowAtIndexPath:indexPath];
+    
+    [self performSegueWithIdentifier:@"showEvento" sender:cell];
+    
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    EventDetailViewController *destinationViewController = (EventDetailViewController *)segue.destinationViewController;
+    
+    if([sender isKindOfClass:[UITableViewCell class]]) {
+        NSIndexPath * indexPath = [self.eventView indexPathForCell:sender];
+        //Your code here
+        destinationViewController.elementoEscolar = [self.elementsData objectAtIndex:indexPath.row];
+        
+    }
+    
 }
 
 

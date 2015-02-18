@@ -10,7 +10,7 @@
 #import "JTCalendar.h"
 #import "JSONHTTPClient.h"
 
-@interface CalendarViewController : UIViewController <JTCalendarDataSource,JSONHTTPClientDelegate, UITableViewDataSource>
+@interface CalendarViewController : UIViewController <JTCalendarDataSource,JSONHTTPClientDelegate, UITableViewDataSource,UITableViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
@@ -24,6 +24,7 @@
 
 @property JSONHTTPClient *jsonClient;
 @property (weak, nonatomic) IBOutlet UITableView *eventView;
+@property (strong,nonatomic) NSString *selectedDate;
 
 
 

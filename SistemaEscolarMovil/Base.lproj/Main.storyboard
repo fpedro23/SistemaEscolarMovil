@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -34,7 +35,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="AZC-N0-xrg" kind="show" id="8fe-Ra-WY7"/>
+                                    <segue destination="AZC-N0-xrg" kind="show" identifier="showCircular" id="8fe-Ra-WY7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -78,7 +79,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="AZC-N0-xrg" kind="show" id="8C3-Lt-b67"/>
+                                    <segue destination="AZC-N0-xrg" kind="show" identifier="showAviso" id="8C3-Lt-b67"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -133,7 +134,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="AZC-N0-xrg" kind="show" id="aLq-8a-uf6"/>
+                                            <segue destination="AZC-N0-xrg" kind="show" identifier="showEvento" id="aLq-8a-uf6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -239,9 +240,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="pek-YR-DbN" kind="relationship" relationship="viewControllers" id="E5D-Jo-G6K"/>
+                        <segue destination="rIP-MW-soL" kind="relationship" relationship="viewControllers" id="fcZ-Zc-Tg3"/>
                         <segue destination="KSZ-lJ-8ll" kind="relationship" relationship="viewControllers" id="xlJ-jt-nmU"/>
                         <segue destination="7EX-qm-hza" kind="relationship" relationship="viewControllers" id="AF3-Ia-T3b"/>
-                        <segue destination="rIP-MW-soL" kind="relationship" relationship="viewControllers" id="fcZ-Zc-Tg3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -286,11 +288,30 @@
             </objects>
             <point key="canvasLocation" x="752" y="409"/>
         </scene>
-        <!--Item-->
+        <!--Inicio-->
+        <scene sceneID="dFL-cF-WrW">
+            <objects>
+                <viewController title="Inicio" id="pek-YR-DbN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VwK-W9-t0I"/>
+                        <viewControllerLayoutGuide type="bottom" id="CRK-zh-k1j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nPv-yz-E60">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Inicio" selectedImage="first" id="lBz-Cz-hV4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CPq-rS-XjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="844"/>
+        </scene>
+        <!--Calendario-->
         <scene sceneID="uo7-bb-teE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rIP-MW-soL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wza-t7-wdc"/>
+                    <tabBarItem key="tabBarItem" title="Calendario" id="wza-t7-wdc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n7d-af-fEE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -306,7 +327,10 @@
             <point key="canvasLocation" x="752" y="1089"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8fe-Ra-WY7"/>
+        <segue reference="aLq-8a-uf6"/>
     </inferredMetricsTieBreakers>
 </document>

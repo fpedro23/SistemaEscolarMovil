@@ -9,14 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "MTLModel.h"
 #import "MTLJSONAdapter.h"
+#import "Administrador.h"
 
 
 @interface ElementoEscolar : MTLModel <MTLJSONSerializing>
 
 @property NSString *idCircular;
 @property NSString *titulo;
-@property NSString *remitente;
 @property NSString *contenido;
 @property NSDate   *fecha;
+@property Administrador   *administrador;
+
 
 @end

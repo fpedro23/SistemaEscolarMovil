@@ -8,6 +8,9 @@
 
 #import "AvisosTableViewController.h"
 #import "ElementoEscolar.h"
+#import "Administrador.h"
+#import "ElementoTableViewCell.h"
+#import "EventDetailViewController.h"
 @interface AvisosTableViewController ()
 @property JSONHTTPClient *jsonClient;
 @end
@@ -91,32 +94,52 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    /*NSString *dateString = [NSDateFormatter localizedStringFromDate:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row]  fecha]
-                                                          dateStyle:NSDateFormatterMediumStyle
+    ElementoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ElementViewCell"];
+    
+    
+    NSString *dateString = [NSDateFormatter localizedStringFromDate:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row]  fecha]
+                                                          dateStyle:NSDateFormatterLongStyle
                                                           timeStyle:NSDateFormatterNoStyle];
-    dateString = [NSString stringWithFormat:@"Fecha de Publicación: %@" ,dateString];
+    dateString = [NSString stringWithFormat:@"Publicada el: %@" ,dateString];
+    
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TableCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.titleLabel.adjustsFontSizeToFitWidth = YES;
+    cell.titleLabel.text = [(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] titulo];
+    cell.remitenteLabel.text = [[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] administrador]nombreAdministrador];
+    cell.fechaEmisionLabel.text = dateString;
     
     
-    UILabel *titulo =(UILabel*)[cell.contentView viewWithTag:1];
-    UILabel *fecha =(UILabel*)[cell.contentView  viewWithTag:2];
-    UILabel *remitente =(UILabel*)[cell.contentView  viewWithTag:3];
+    //[cell.textLabel setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] titulo]];
     
-    
-    
-    // Configure the cell...
-    [titulo setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] titulo]];
-    [fecha setText: dateString];
-    fecha.adjustsFontSizeToFitWidth = YES;
-    cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
-    [remitente setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] remitente]];
-    remitente.adjustsFontSizeToFitWidth =YES;*/
-    
-    [cell.textLabel setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] titulo]];
-    [cell.detailTextLabel setText:[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] remitente]];
-    cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
+    //[cell.detailTextLabel setText:[[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] administrador ]nombreAdministrador]];
     
     return cell;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ElementoTableViewCell *cell = (ElementoTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+    
+    [self performSegueWithIdentifier:@"showAviso" sender:cell];
+    
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    EventDetailViewController *destinationViewController = (EventDetailViewController *)segue.destinationViewController;
+    
+    if([sender isKindOfClass:[UITableViewCell class]]) {
+        NSIndexPath * indexPath = [self.tableView indexPathForCell:sender];
+        //Your code here
+        destinationViewController.elementoEscolar = [self.elementsData objectAtIndex:indexPath.row];
+        
+    }
+    
 }
 
 

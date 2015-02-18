@@ -7,6 +7,7 @@
 //
 
 #import "EventDetailViewController.h"
+#import "Administrador.h"
 
 @implementation EventDetailViewController
 @synthesize elementoEscolar;
@@ -14,7 +15,7 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self.labelTitulo setText:elementoEscolar.titulo];
-    [self.labelRemitente setText:elementoEscolar.remitente];
+    [self.labelRemitente setText:elementoEscolar.administrador.nombreAdministrador];
     [self.contenidoTextView setText:elementoEscolar.contenido];
 
     

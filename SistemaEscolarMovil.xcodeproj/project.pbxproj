@@ -20,6 +20,9 @@
 		EB25CA691A8DB3E6009011F2 /* AFNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EB25CA681A8DB3E6009011F2 /* AFNetworkActivityLogger.m */; };
 		EB25CA6C1A8DB93B009011F2 /* CircularesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB25CA6B1A8DB93B009011F2 /* CircularesTableViewController.m */; };
 		EB4A387F1A8E998C009ACA4E /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4A387E1A8E998C009ACA4E /* EventDetailViewController.m */; };
+		EB851CEA1A94362700D04766 /* Administrador.m in Sources */ = {isa = PBXBuildFile; fileRef = EB851CE91A94362700D04766 /* Administrador.m */; };
+		EB851CEC1A9442ED00D04766 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB851CEB1A9442ED00D04766 /* TableCell.xib */; };
+		EB851CEF1A9444B900D04766 /* ElementoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB851CEE1A9444B900D04766 /* ElementoTableViewCell.m */; };
 		EBF0F9BA1A8D76E300B54D57 /* ElementoEscolar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +40,7 @@
 		243C120D1E64FD7FE779EC74 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7A0107A406A617082E72B0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C39D2D3DE4B38EB36823FCA8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		EB07BE431A8D727F00622C7D /* SistemaEscolarMovil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SistemaEscolarMovil.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB07BE431A8D727F00622C7D /* Aristos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aristos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB07BE471A8D727F00622C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB07BE481A8D727F00622C7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB07BE4A1A8D727F00622C7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +63,11 @@
 		EB25CA6B1A8DB93B009011F2 /* CircularesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularesTableViewController.m; sourceTree = "<group>"; };
 		EB4A387D1A8E998C009ACA4E /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
 		EB4A387E1A8E998C009ACA4E /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		EB851CE81A94362700D04766 /* Administrador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Administrador.h; sourceTree = "<group>"; };
+		EB851CE91A94362700D04766 /* Administrador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Administrador.m; sourceTree = "<group>"; };
+		EB851CEB1A9442ED00D04766 /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
+		EB851CED1A9444B900D04766 /* ElementoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementoTableViewCell.h; sourceTree = "<group>"; };
+		EB851CEE1A9444B900D04766 /* ElementoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementoTableViewCell.m; sourceTree = "<group>"; };
 		EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElementoEscolar.h; path = ../ElementoEscolar.h; sourceTree = "<group>"; };
 		EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElementoEscolar.m; path = ../ElementoEscolar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +122,7 @@
 		EB07BE441A8D727F00622C7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EB07BE431A8D727F00622C7D /* SistemaEscolarMovil.app */,
+				EB07BE431A8D727F00622C7D /* Aristos.app */,
 				EB07BE5F1A8D727F00622C7D /* SistemaEscolarMovilTests.xctest */,
 			);
 			name = Products;
@@ -166,6 +174,8 @@
 			children = (
 				EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */,
 				EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */,
+				EB851CE81A94362700D04766 /* Administrador.h */,
+				EB851CE91A94362700D04766 /* Administrador.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -200,7 +210,10 @@
 			isa = PBXGroup;
 			children = (
 				EB07BE531A8D727F00622C7D /* Main.storyboard */,
+				EB851CEB1A9442ED00D04766 /* TableCell.xib */,
 				EB07BE581A8D727F00622C7D /* LaunchScreen.xib */,
+				EB851CED1A9444B900D04766 /* ElementoTableViewCell.h */,
+				EB851CEE1A9444B900D04766 /* ElementoTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -224,7 +237,7 @@
 			);
 			name = SistemaEscolarMovil;
 			productName = SistemaEscolarMovil;
-			productReference = EB07BE431A8D727F00622C7D /* SistemaEscolarMovil.app */;
+			productReference = EB07BE431A8D727F00622C7D /* Aristos.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EB07BE5E1A8D727F00622C7D /* SistemaEscolarMovilTests */ = {
@@ -289,6 +302,7 @@
 			files = (
 				EB07BE551A8D727F00622C7D /* Main.storyboard in Resources */,
 				EB07BE5A1A8D727F00622C7D /* LaunchScreen.xib in Resources */,
+				EB851CEC1A9442ED00D04766 /* TableCell.xib in Resources */,
 				EB07BE571A8D727F00622C7D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,7 +362,9 @@
 				EB1E9A5A1A8E711B00984BDF /* CalendarViewController.m in Sources */,
 				EB25CA6C1A8DB93B009011F2 /* CircularesTableViewController.m in Sources */,
 				EB07BE491A8D727F00622C7D /* main.m in Sources */,
+				EB851CEF1A9444B900D04766 /* ElementoTableViewCell.m in Sources */,
 				EB1E9A551A8E6ABE00984BDF /* AvisosTableViewController.m in Sources */,
+				EB851CEA1A94362700D04766 /* Administrador.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,8 +490,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SistemaEscolarMovil/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Aristos;
 			};
 			name = Debug;
 		};
@@ -485,8 +502,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SistemaEscolarMovil/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Aristos;
 			};
 			name = Release;
 		};
