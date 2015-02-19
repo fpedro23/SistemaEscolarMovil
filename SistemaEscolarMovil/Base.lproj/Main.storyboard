@@ -34,9 +34,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="AZC-N0-xrg" kind="show" identifier="showCircular" id="8fe-Ra-WY7"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -45,6 +42,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Circulares" id="18K-rk-c83"/>
+                    <connections>
+                        <segue destination="8HI-ry-L7S" kind="show" identifier="showCircular" id="N0O-bD-gUg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LR-MK-O49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,9 +78,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="AZC-N0-xrg" kind="show" identifier="showAviso" id="8C3-Lt-b67"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -89,6 +86,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Avisos" id="vV1-eY-HWs"/>
+                    <connections>
+                        <segue destination="8HI-ry-L7S" kind="show" identifier="showAviso" id="beM-HT-33J"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYF-KF-rD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +111,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mBz-Vl-YYC">
-                                <rect key="frame" x="5" y="435" width="590" height="116"/>
+                                <rect key="frame" x="5" y="434" width="590" height="116"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="mtW-uh-RSL" detailTextLabel="Ltc-EW-ULX" rowHeight="50" style="IBUITableViewCellStyleValue1" id="fgF-TJ-itg">
@@ -133,9 +133,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="AZC-N0-xrg" kind="show" identifier="showEvento" id="aLq-8a-uf6"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -161,73 +158,12 @@
                         <outlet property="calendarContentView" destination="2ml-Vb-ljf" id="tz7-gf-vvR"/>
                         <outlet property="calendarMenuView" destination="jgc-Eo-OBB" id="ouV-P6-hZG"/>
                         <outlet property="eventView" destination="mBz-Vl-YYC" id="1ki-6w-G7B"/>
+                        <segue destination="8HI-ry-L7S" kind="show" identifier="showEvento" id="f2E-lQ-fTi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAY-Wq-TcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1521" y="1089"/>
-        </scene>
-        <!--Event Detail View Controller-->
-        <scene sceneID="1Sv-mB-SIt">
-            <objects>
-                <viewController id="AZC-N0-xrg" customClass="EventDetailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BzY-8v-kwc"/>
-                        <viewControllerLayoutGuide type="bottom" id="boV-TG-SA1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9ab-19-4bq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Junta de Padres de Familia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htd-Wn-iZU">
-                                <rect key="frame" x="21" y="72" width="224" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emitida el: 19 enero 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qD-3Z-rJu">
-                                <rect key="frame" x="21" y="94" width="194" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.5258680555555556" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dirección" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-PO-4PV">
-                                <rect key="frame" x="21" y="116" width="73" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMM-8k-EzX">
-                                <rect key="frame" x="16" y="168" width="561" height="340"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="eMM-8k-EzX" secondAttribute="trailing" constant="7" id="WdP-uD-ChD"/>
-                            <constraint firstItem="eMM-8k-EzX" firstAttribute="leading" secondItem="9ab-19-4bq" secondAttribute="leadingMargin" id="Y3u-lo-Yk8"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="contenidoTextView" destination="eMM-8k-EzX" id="7Lr-47-PtQ"/>
-                        <outlet property="labelFecha" destination="5qD-3Z-rJu" id="3Ef-7Q-9v0"/>
-                        <outlet property="labelRemitente" destination="CbF-PO-4PV" id="rag-W1-FSJ"/>
-                        <outlet property="labelTitulo" destination="htd-Wn-iZU" id="Hzc-Y3-MtA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rVK-uj-c5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2383" y="293"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -326,11 +262,116 @@
             </objects>
             <point key="canvasLocation" x="752" y="1089"/>
         </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="ktI-Xd-YHq">
+            <objects>
+                <viewController id="8HI-ry-L7S" customClass="EventDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sf0-aS-OW0"/>
+                        <viewControllerLayoutGuide type="bottom" id="9kf-Y6-ftf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="igF-nc-xhe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Junta de Padres de Familia" textAlignment="right" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="qs1-up-LMW">
+                                <rect key="frame" x="295" y="180" width="294" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Toluca, México, a 19 Enero de 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-NG-SOu">
+                                <rect key="frame" x="344" y="209" width="245" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.52586805560000005" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Remitente: Dirección" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEW-nr-f9a">
+                                <rect key="frame" x="117" y="95" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4N-cQ-FlX">
+                                <rect key="frame" x="117" y="77" width="187" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Unidad Pedagógica Aristos">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t6z-DP-Ggw">
+                                <rect key="frame" x="16" y="72" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="V6b-sX-YRl"/>
+                                    <constraint firstAttribute="height" constant="100" id="sWx-LF-y0S"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ShX-Ee-sN9">
+                                <rect key="frame" x="23" y="260" width="561" height="261"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LogoBlanco.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ccr-p8-KT8">
+                                <rect key="frame" x="135" y="214" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="8Ba-vY-6bw"/>
+                                    <constraint firstAttribute="height" constant="300" id="m8T-e7-6yD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ShX-Ee-sN9" firstAttribute="top" secondItem="t6z-DP-Ggw" secondAttribute="bottom" constant="73" id="3lW-Pt-rWx"/>
+                            <constraint firstAttribute="centerX" secondItem="ShX-Ee-sN9" secondAttribute="centerX" constant="3.5" id="4gZ-Yp-gUs"/>
+                            <constraint firstItem="ShX-Ee-sN9" firstAttribute="trailing" secondItem="igF-nc-xhe" secondAttribute="trailingMargin" constant="5" id="7I0-Kf-w1C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qs1-up-LMW" secondAttribute="trailing" constant="5" id="G3E-zP-qJK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IMM-NG-SOu" secondAttribute="trailing" constant="5" id="GV5-gw-u5k"/>
+                            <constraint firstItem="t6z-DP-Ggw" firstAttribute="leading" secondItem="igF-nc-xhe" secondAttribute="leadingMargin" id="MRF-aM-TFO"/>
+                            <constraint firstItem="t6z-DP-Ggw" firstAttribute="top" secondItem="Sf0-aS-OW0" secondAttribute="bottom" constant="8" id="OM4-ET-mmV"/>
+                            <constraint firstItem="Ccr-p8-KT8" firstAttribute="top" secondItem="Sf0-aS-OW0" secondAttribute="bottom" constant="130" id="TmM-q3-1fG"/>
+                            <constraint firstItem="qs1-up-LMW" firstAttribute="top" secondItem="Sf0-aS-OW0" secondAttribute="bottom" constant="116" id="XGF-Fb-OtL"/>
+                            <constraint firstAttribute="centerY" secondItem="ShX-Ee-sN9" secondAttribute="centerY" constant="-108" id="dPk-TV-iM8"/>
+                            <constraint firstItem="gEW-nr-f9a" firstAttribute="leading" secondItem="t6z-DP-Ggw" secondAttribute="trailing" constant="3" id="g8K-3Q-aRA"/>
+                            <constraint firstItem="ShX-Ee-sN9" firstAttribute="leading" secondItem="igF-nc-xhe" secondAttribute="leadingMargin" constant="5" id="i1w-7x-H8R"/>
+                            <constraint firstItem="IMM-NG-SOu" firstAttribute="top" secondItem="qs1-up-LMW" secondAttribute="bottom" constant="8" id="iEi-Gb-tgN"/>
+                            <constraint firstItem="i4N-cQ-FlX" firstAttribute="leading" secondItem="t6z-DP-Ggw" secondAttribute="trailing" constant="3" id="lsq-eB-uyt"/>
+                            <constraint firstAttribute="centerX" secondItem="Ccr-p8-KT8" secondAttribute="centerX" id="ryg-K8-Bdf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contenidoTextView" destination="ShX-Ee-sN9" id="cBd-mU-Q05"/>
+                        <outlet property="labelFecha" destination="IMM-NG-SOu" id="qJQ-0X-2c3"/>
+                        <outlet property="labelRemitente" destination="gEW-nr-f9a" id="Gdi-ep-K2G"/>
+                        <outlet property="labelTitulo" destination="qs1-up-LMW" id="a6B-4U-Tr3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1wI-IW-w8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349" y="23"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Logo.jpg" width="1024" height="1024"/>
+        <image name="LogoBlanco.jpg" width="1024" height="1024"/>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aLq-8a-uf6"/>
+        <segue reference="N0O-bD-gUg"/>
     </inferredMetricsTieBreakers>
 </document>

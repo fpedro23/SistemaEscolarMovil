@@ -54,7 +54,7 @@
 
 
 -(void)getLatestCirculars{
-    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readCircular" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"mobileReadCircular" withOptions:nil];
 }
 
 - (void)viewDidLoad {
@@ -62,7 +62,7 @@
     
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
     _jsonClient.delegate = self;
-    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readCircular" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"mobileReadCircular" withOptions:nil];
     //http://192.168.100.36:8080/SistemaEscolar/readCircular?mobile=true
     
     updateControl = [[UIRefreshControl alloc] init];

@@ -29,7 +29,7 @@
 
 
 -(void)refreshTapped{
-    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readEvent" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"mobileReadEvents" withOptions:nil];
     [self createEvents];
     [self.calendar reloadData]; // Must be call in viewDidAppear
     [self.eventView reloadData];
@@ -46,7 +46,7 @@
     
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
     _jsonClient.delegate = self;
-    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readEvent" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"mobileReadEvents" withOptions:nil];
     self.eventView.dataSource = self;
     self.eventView.delegate = self;
     self.calendar = [JTCalendar new];

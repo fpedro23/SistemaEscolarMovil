@@ -13,7 +13,6 @@
 		EB07BE551A8D727F00622C7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB07BE531A8D727F00622C7D /* Main.storyboard */; };
 		EB07BE571A8D727F00622C7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB07BE561A8D727F00622C7D /* Images.xcassets */; };
 		EB07BE5A1A8D727F00622C7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB07BE581A8D727F00622C7D /* LaunchScreen.xib */; };
-		EB07BE661A8D727F00622C7D /* SistemaEscolarMovilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07BE651A8D727F00622C7D /* SistemaEscolarMovilTests.m */; };
 		EB1E9A551A8E6ABE00984BDF /* AvisosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1E9A541A8E6ABE00984BDF /* AvisosTableViewController.m */; };
 		EB1E9A5A1A8E711B00984BDF /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1E9A591A8E711B00984BDF /* CalendarViewController.m */; };
 		EB21820A1A8D8A4400E684C0 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2182091A8D8A4400E684C0 /* JSONHTTPClient.m */; };
@@ -23,18 +22,10 @@
 		EB851CEA1A94362700D04766 /* Administrador.m in Sources */ = {isa = PBXBuildFile; fileRef = EB851CE91A94362700D04766 /* Administrador.m */; };
 		EB851CEC1A9442ED00D04766 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB851CEB1A9442ED00D04766 /* TableCell.xib */; };
 		EB851CEF1A9444B900D04766 /* ElementoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB851CEE1A9444B900D04766 /* ElementoTableViewCell.m */; };
+		EBC974991A959A200089048F /* Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBC974981A959A200089048F /* Logo.jpg */; };
+		EBC9749B1A959C6D0089048F /* aristos_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC9749A1A959C6D0089048F /* aristos_logo.png */; };
 		EBF0F9BA1A8D76E300B54D57 /* ElementoEscolar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		EB07BE601A8D727F00622C7D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EB07BE3B1A8D727F00622C7D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EB07BE421A8D727F00622C7D;
-			remoteInfo = SistemaEscolarMovil;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		243C120D1E64FD7FE779EC74 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +39,6 @@
 		EB07BE541A8D727F00622C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB07BE561A8D727F00622C7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EB07BE591A8D727F00622C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		EB07BE5F1A8D727F00622C7D /* SistemaEscolarMovilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SistemaEscolarMovilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB07BE641A8D727F00622C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB07BE651A8D727F00622C7D /* SistemaEscolarMovilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SistemaEscolarMovilTests.m; sourceTree = "<group>"; };
 		EB1E9A531A8E6ABE00984BDF /* AvisosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvisosTableViewController.h; sourceTree = "<group>"; };
@@ -68,6 +58,8 @@
 		EB851CEB1A9442ED00D04766 /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
 		EB851CED1A9444B900D04766 /* ElementoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementoTableViewCell.h; sourceTree = "<group>"; };
 		EB851CEE1A9444B900D04766 /* ElementoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementoTableViewCell.m; sourceTree = "<group>"; };
+		EBC974981A959A200089048F /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
+		EBC9749A1A959C6D0089048F /* aristos_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aristos_logo.png; sourceTree = "<group>"; };
 		EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElementoEscolar.h; path = ../ElementoEscolar.h; sourceTree = "<group>"; };
 		EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElementoEscolar.m; path = ../ElementoEscolar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,13 +70,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73D2CE72B10618F92C442A4 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB07BE5C1A8D727F00622C7D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				EB07BE431A8D727F00622C7D /* Aristos.app */,
-				EB07BE5F1A8D727F00622C7D /* SistemaEscolarMovilTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,7 +193,9 @@
 		EB1E9A521A8E6A7800984BDF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EBC9749A1A959C6D0089048F /* aristos_logo.png */,
 				EB07BE531A8D727F00622C7D /* Main.storyboard */,
+				EBC974981A959A200089048F /* Logo.jpg */,
 				EB851CEB1A9442ED00D04766 /* TableCell.xib */,
 				EB07BE581A8D727F00622C7D /* LaunchScreen.xib */,
 				EB851CED1A9444B900D04766 /* ElementoTableViewCell.h */,
@@ -240,24 +226,6 @@
 			productReference = EB07BE431A8D727F00622C7D /* Aristos.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EB07BE5E1A8D727F00622C7D /* SistemaEscolarMovilTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB07BE6C1A8D727F00622C7D /* Build configuration list for PBXNativeTarget "SistemaEscolarMovilTests" */;
-			buildPhases = (
-				EB07BE5B1A8D727F00622C7D /* Sources */,
-				EB07BE5C1A8D727F00622C7D /* Frameworks */,
-				EB07BE5D1A8D727F00622C7D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EB07BE611A8D727F00622C7D /* PBXTargetDependency */,
-			);
-			name = SistemaEscolarMovilTests;
-			productName = SistemaEscolarMovilTests;
-			productReference = EB07BE5F1A8D727F00622C7D /* SistemaEscolarMovilTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -269,10 +237,6 @@
 				TargetAttributes = {
 					EB07BE421A8D727F00622C7D = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					EB07BE5E1A8D727F00622C7D = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = EB07BE421A8D727F00622C7D;
 					};
 				};
 			};
@@ -290,7 +254,6 @@
 			projectRoot = "";
 			targets = (
 				EB07BE421A8D727F00622C7D /* SistemaEscolarMovil */,
-				EB07BE5E1A8D727F00622C7D /* SistemaEscolarMovilTests */,
 			);
 		};
 /* End PBXProject section */
@@ -300,17 +263,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC9749B1A959C6D0089048F /* aristos_logo.png in Resources */,
 				EB07BE551A8D727F00622C7D /* Main.storyboard in Resources */,
 				EB07BE5A1A8D727F00622C7D /* LaunchScreen.xib in Resources */,
+				EBC974991A959A200089048F /* Logo.jpg in Resources */,
 				EB851CEC1A9442ED00D04766 /* TableCell.xib in Resources */,
 				EB07BE571A8D727F00622C7D /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB07BE5D1A8D727F00622C7D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,23 +326,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB07BE5B1A8D727F00622C7D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB07BE661A8D727F00622C7D /* SistemaEscolarMovilTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		EB07BE611A8D727F00622C7D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EB07BE421A8D727F00622C7D /* SistemaEscolarMovil */;
-			targetProxy = EB07BE601A8D727F00622C7D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EB07BE531A8D727F00622C7D /* Main.storyboard */ = {
@@ -508,40 +450,6 @@
 			};
 			name = Release;
 		};
-		EB07BE6D1A8D727F00622C7D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SistemaEscolarMovilTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SistemaEscolarMovil.app/SistemaEscolarMovil";
-			};
-			name = Debug;
-		};
-		EB07BE6E1A8D727F00622C7D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SistemaEscolarMovilTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SistemaEscolarMovil.app/SistemaEscolarMovil";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -559,15 +467,6 @@
 			buildConfigurations = (
 				EB07BE6A1A8D727F00622C7D /* Debug */,
 				EB07BE6B1A8D727F00622C7D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB07BE6C1A8D727F00622C7D /* Build configuration list for PBXNativeTarget "SistemaEscolarMovilTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EB07BE6D1A8D727F00622C7D /* Debug */,
-				EB07BE6E1A8D727F00622C7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

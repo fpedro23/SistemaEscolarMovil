@@ -54,7 +54,7 @@
 
 
 -(void)getLatestAvisos{
-    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readAvisos" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"mobileReadAvisos" withOptions:nil];
 }
 
 
@@ -63,7 +63,7 @@
     
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
     _jsonClient.delegate = self;
-    [_jsonClient performPOSTRequestWithParameters:@{@"mobile":@"true"} toServlet:@"readAvisos" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"mobileReadAvisos" withOptions:nil];
     //http://192.168.100.36:8080/SistemaEscolar/readCircular?mobile=true
     
     
