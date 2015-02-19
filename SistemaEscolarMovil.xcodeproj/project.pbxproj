@@ -22,6 +22,7 @@
 		EB851CEA1A94362700D04766 /* Administrador.m in Sources */ = {isa = PBXBuildFile; fileRef = EB851CE91A94362700D04766 /* Administrador.m */; };
 		EB851CEC1A9442ED00D04766 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB851CEB1A9442ED00D04766 /* TableCell.xib */; };
 		EB851CEF1A9444B900D04766 /* ElementoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB851CEE1A9444B900D04766 /* ElementoTableViewCell.m */; };
+		EB8F4FED1A969C3800C1E089 /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F4FEC1A969C3800C1E089 /* Evento.m */; };
 		EBC974991A959A200089048F /* Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBC974981A959A200089048F /* Logo.jpg */; };
 		EBC9749B1A959C6D0089048F /* aristos_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC9749A1A959C6D0089048F /* aristos_logo.png */; };
 		EBF0F9BA1A8D76E300B54D57 /* ElementoEscolar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */; };
@@ -58,6 +59,8 @@
 		EB851CEB1A9442ED00D04766 /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
 		EB851CED1A9444B900D04766 /* ElementoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementoTableViewCell.h; sourceTree = "<group>"; };
 		EB851CEE1A9444B900D04766 /* ElementoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementoTableViewCell.m; sourceTree = "<group>"; };
+		EB8F4FEB1A969C3800C1E089 /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
+		EB8F4FEC1A969C3800C1E089 /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
 		EBC974981A959A200089048F /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
 		EBC9749A1A959C6D0089048F /* aristos_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aristos_logo.png; sourceTree = "<group>"; };
 		EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElementoEscolar.h; path = ../ElementoEscolar.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 			children = (
 				EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */,
 				EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */,
+				EB8F4FEB1A969C3800C1E089 /* Evento.h */,
+				EB8F4FEC1A969C3800C1E089 /* Evento.m */,
 				EB851CE81A94362700D04766 /* Administrador.h */,
 				EB851CE91A94362700D04766 /* Administrador.m */,
 			);
@@ -237,6 +242,7 @@
 				TargetAttributes = {
 					EB07BE421A8D727F00622C7D = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = D7K92GRWLG;
 					};
 				};
 			};
@@ -316,6 +322,7 @@
 				EB21820A1A8D8A4400E684C0 /* JSONHTTPClient.m in Sources */,
 				EB25CA691A8DB3E6009011F2 /* AFNetworkActivityLogger.m in Sources */,
 				EBF0F9BA1A8D76E300B54D57 /* ElementoEscolar.m in Sources */,
+				EB8F4FED1A969C3800C1E089 /* Evento.m in Sources */,
 				EB07BE4C1A8D727F00622C7D /* AppDelegate.m in Sources */,
 				EB1E9A5A1A8E711B00984BDF /* CalendarViewController.m in Sources */,
 				EB25CA6C1A8DB93B009011F2 /* CircularesTableViewController.m in Sources */,
@@ -385,6 +392,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "9f63b4e9-220e-425d-ac50-82103925e363";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -431,10 +439,13 @@
 			baseConfigurationReference = 8F7A0107A406A617082E72B0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SistemaEscolarMovil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Aristos;
+				PROVISIONING_PROFILE = "eb3ad90a-8722-40b4-9a52-ad1c1257cb4c";
 			};
 			name = Debug;
 		};
@@ -443,10 +454,13 @@
 			baseConfigurationReference = C39D2D3DE4B38EB36823FCA8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SistemaEscolarMovil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Aristos;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

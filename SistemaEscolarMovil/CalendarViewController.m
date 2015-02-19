@@ -20,7 +20,7 @@
     NSLog(@"Error : %@", [error localizedDescription]);
 }
 
--(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didResponseToElements:(id)response{
+-(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didResponseToEvents:(id)response{
     self.elementsData = response;
     [self createEvents];
     [self.calendar reloadData]; // Must be call in viewDidAppear
@@ -190,7 +190,7 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd/MM/yyyy";
+        dateFormatter.dateFormat = @"yyyy-MM-dd";
     }
     
     return dateFormatter;
@@ -295,7 +295,7 @@
     if([sender isKindOfClass:[UITableViewCell class]]) {
         NSIndexPath * indexPath = [self.eventView indexPathForCell:sender];
         //Your code here
-        destinationViewController.elementoEscolar = [self.elementsData objectAtIndex:indexPath.row];
+        destinationViewController.elementoEscolar = [self.dayEvents objectAtIndex:indexPath.row];
         
     }
     

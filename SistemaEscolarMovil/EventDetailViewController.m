@@ -51,6 +51,17 @@
 }
 
 
+- (NSDateFormatter *)dateFormatter
+{
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm";
+    }
+    
+    return dateFormatter;
+}
+
 - (NSDateFormatter *)dateFormatterLong
 {
     static NSDateFormatter *dateFormatter;
@@ -97,7 +108,7 @@
 // Prompt the user for access to their Calendar
 -(void)requestCalendarAccess
 {
-    [self.eventStore requestAccessToEntityType:EKEntityMaskEvent completion:^(BOOL granted, NSError *error)
+    [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error)
      {
          if (granted)
          {
