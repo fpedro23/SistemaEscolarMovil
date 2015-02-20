@@ -20,7 +20,7 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://10.25.200.152:8080/SistemaEscolar/"]]; //readCircular?mobile=true
+        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.168.100.5:8080/SistemaEscolar/"]]; //readCircular?mobile=true
     });
     
     return _sharedJSONAPIClient;
@@ -55,6 +55,13 @@
 
             }
         }
+        else if ([servletName isEqualToString:@"mobileLogin"]){
+            NSArray *administratorsData = [self deserializeAdministratorsFromJSON:responseObject];
+            if([self.delegate respondsToSelector:@selector(JSONHTTPClientDelegate:didResponseToLogin:)]){
+                [self.delegate JSONHTTPClientDelegate:self didResponseToLogin:administratorsData];
+                
+            }
+        }
         else{
             NSArray *elementsData = [self deserializeElementsFromJSON:JSONResponse];
             
@@ -74,7 +81,7 @@
             [self.delegate JSONHTTPClientDelegate:self didFailResponseWithError:error];
         }
 
-        
+        NSLog(@"%@",errorStr);
         [[[UIAlertView alloc] initWithTitle:@"Error"
                                     message:@"Hubo un error al hacer la búsqueda"
                                    delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
@@ -108,6 +115,18 @@
     
     return works;
 }
-     
+
+- (NSArray *)deserializeAdministratorsFromJSON:(NSDictionary *)resultJSON
+{
+    NSError *error;
+   // NSArray *works = [MTLJSONAdapter modelsOfClass:[Administrador class] fromJSONArray:resultJSON error:&error];
+     NSArray *works = [MTLJSONAdapter modelOfClass:[Administrador class] fromJSONDictionary:resultJSON error:&error];
+    if (error) {
+        NSLog(@"Couldn't convert Elements JSON to Administrador models: %@", error);
+        return nil;
+    }
+    
+    return works;
+}
 
 @end

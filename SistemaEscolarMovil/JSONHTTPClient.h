@@ -32,6 +32,8 @@
 -(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didFailResponseWithError:(NSError *)error;
 -(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didResponseToElements:(id)response;
 -(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didResponseToEvents:(id)response;
+-(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didResponseToLogin:(id)response;
+
 
 
 

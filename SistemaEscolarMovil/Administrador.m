@@ -15,7 +15,8 @@
     // model_property_name : json_field_name
     return @{
              @"idAdministrador" : @"idAdministrador",
-             @"nombreAdministrador" : @"nombreAdministrador"
+             @"nombreAdministrador" : @"nombreAdministrador",
+             @"success": @"succes"
              };
 }
 

@@ -13,5 +13,6 @@
 @interface Administrador : MTLModel <MTLJSONSerializing>
 @property NSString *idAdministrador;
 @property NSString *nombreAdministrador;
+@property NSString *success;
 
 @end
