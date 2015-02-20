@@ -25,6 +25,10 @@
 		EB8F4FED1A969C3800C1E089 /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F4FEC1A969C3800C1E089 /* Evento.m */; };
 		EB9FD0141A96DB4C00A8FE75 /* LogoBlanco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB9FD0131A96DB4C00A8FE75 /* LogoBlanco.jpg */; };
 		EB9FD0171A96DFD800A8FE75 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9FD0161A96DFD800A8FE75 /* LoginViewController.m */; };
+		EB9FD0191A96FD1300A8FE75 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9FD0181A96FD1300A8FE75 /* home.png */; };
+		EB9FD01B1A96FD9F00A8FE75 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9FD01A1A96FD9F00A8FE75 /* calendar.png */; };
+		EB9FD01D1A96FDD200A8FE75 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9FD01C1A96FDD200A8FE75 /* info.png */; };
+		EB9FD01F1A96FDEE00A8FE75 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9FD01E1A96FDEE00A8FE75 /* email.png */; };
 		EBC974991A959A200089048F /* Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBC974981A959A200089048F /* Logo.jpg */; };
 		EBC9749B1A959C6D0089048F /* aristos_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC9749A1A959C6D0089048F /* aristos_logo.png */; };
 		EBF0F9BA1A8D76E300B54D57 /* ElementoEscolar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF0F9B91A8D76E300B54D57 /* ElementoEscolar.m */; };
@@ -66,6 +70,10 @@
 		EB9FD0131A96DB4C00A8FE75 /* LogoBlanco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LogoBlanco.jpg; sourceTree = "<group>"; };
 		EB9FD0151A96DFD800A8FE75 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		EB9FD0161A96DFD800A8FE75 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EB9FD0181A96FD1300A8FE75 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		EB9FD01A1A96FD9F00A8FE75 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		EB9FD01C1A96FDD200A8FE75 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		EB9FD01E1A96FDEE00A8FE75 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		EBC974981A959A200089048F /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
 		EBC9749A1A959C6D0089048F /* aristos_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aristos_logo.png; sourceTree = "<group>"; };
 		EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElementoEscolar.h; path = ../ElementoEscolar.h; sourceTree = "<group>"; };
@@ -123,6 +131,10 @@
 		EB07BE451A8D727F00622C7D /* SistemaEscolarMovil */ = {
 			isa = PBXGroup;
 			children = (
+				EB9FD01E1A96FDEE00A8FE75 /* email.png */,
+				EB9FD01C1A96FDD200A8FE75 /* info.png */,
+				EB9FD01A1A96FD9F00A8FE75 /* calendar.png */,
+				EB9FD0181A96FD1300A8FE75 /* home.png */,
 				EB9FD0131A96DB4C00A8FE75 /* LogoBlanco.jpg */,
 				EB1E9A511A8E6A6C00984BDF /* Logger */,
 				EB1E9A4F1A8E6A4A00984BDF /* Model */,
@@ -277,10 +289,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9FD01F1A96FDEE00A8FE75 /* email.png in Resources */,
 				EBC9749B1A959C6D0089048F /* aristos_logo.png in Resources */,
+				EB9FD01D1A96FDD200A8FE75 /* info.png in Resources */,
 				EB07BE551A8D727F00622C7D /* Main.storyboard in Resources */,
 				EB07BE5A1A8D727F00622C7D /* LaunchScreen.xib in Resources */,
 				EBC974991A959A200089048F /* Logo.jpg in Resources */,
+				EB9FD01B1A96FD9F00A8FE75 /* calendar.png in Resources */,
+				EB9FD0191A96FD1300A8FE75 /* home.png in Resources */,
 				EB9FD0141A96DB4C00A8FE75 /* LogoBlanco.jpg in Resources */,
 				EB851CEC1A9442ED00D04766 /* TableCell.xib in Resources */,
 				EB07BE571A8D727F00622C7D /* Images.xcassets in Resources */,
