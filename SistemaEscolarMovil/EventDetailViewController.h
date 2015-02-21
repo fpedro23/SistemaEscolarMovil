@@ -30,4 +30,6 @@
 // Used to add events to Calendar
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
+@property BOOL isEvent;
+
 @end

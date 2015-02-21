@@ -137,6 +137,8 @@
         NSIndexPath * indexPath = [self.tableView indexPathForCell:sender];
         //Your code here
         destinationViewController.elementoEscolar = [self.elementsData objectAtIndex:indexPath.row];
+        destinationViewController.isEvent = NO;
+
         
     }
     

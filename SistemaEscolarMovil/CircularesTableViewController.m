@@ -123,6 +123,9 @@
 }
 
 
+
+
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ElementoTableViewCell *cell = (ElementoTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
 
@@ -138,6 +141,8 @@
         NSIndexPath * indexPath = [self.tableView indexPathForCell:sender];
         //Your code here
         destinationViewController.elementoEscolar = [self.elementsData objectAtIndex:indexPath.row];
+        destinationViewController.isEvent = NO;
+
         
     }
     

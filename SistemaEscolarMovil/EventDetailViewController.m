@@ -20,15 +20,21 @@
     self.eventStore = [[EKEventStore alloc] init];
     // The Add button is initially disabled
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent:)];
+    if(self.isEvent){
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent:)];
+        
+        [self.navigationItem setRightBarButtonItem:addButton];
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
     
-    [self.navigationItem setRightBarButtonItem:addButton];
-    self.navigationItem.rightBarButtonItem.enabled = NO;
 
+    self.title = self.elementoEscolar.titulo;
     
     self.labelTitulo.adjustsFontSizeToFitWidth = YES;
     self.labelTitulo.numberOfLines = 2;
     self.labelTitulo.clipsToBounds = YES;
+    self.contenidoTextView.backgroundColor = [UIColor clearColor];
+
     
     NSString *stringRemitente = [NSString stringWithFormat:@"Remitente: %@",self.elementoEscolar.administrador.nombreAdministrador];
     

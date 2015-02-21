@@ -19,6 +19,9 @@
 		EB25CA691A8DB3E6009011F2 /* AFNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EB25CA681A8DB3E6009011F2 /* AFNetworkActivityLogger.m */; };
 		EB25CA6C1A8DB93B009011F2 /* CircularesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB25CA6B1A8DB93B009011F2 /* CircularesTableViewController.m */; };
 		EB4A387F1A8E998C009ACA4E /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4A387E1A8E998C009ACA4E /* EventDetailViewController.m */; };
+		EB7C6DBB1A984AC200EB333A /* aristos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB7C6DBA1A984AC200EB333A /* aristos.jpg */; };
+		EB7C6DBE1A984D5400EB333A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7C6DBD1A984D5400EB333A /* HomeViewController.m */; };
+		EB7C6DC21A98513800EB333A /* LogoBlancoRes.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7C6DC11A98513800EB333A /* LogoBlancoRes.png */; };
 		EB851CEA1A94362700D04766 /* Administrador.m in Sources */ = {isa = PBXBuildFile; fileRef = EB851CE91A94362700D04766 /* Administrador.m */; };
 		EB851CEC1A9442ED00D04766 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB851CEB1A9442ED00D04766 /* TableCell.xib */; };
 		EB851CEF1A9444B900D04766 /* ElementoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB851CEE1A9444B900D04766 /* ElementoTableViewCell.m */; };
@@ -60,6 +63,10 @@
 		EB25CA6B1A8DB93B009011F2 /* CircularesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularesTableViewController.m; sourceTree = "<group>"; };
 		EB4A387D1A8E998C009ACA4E /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
 		EB4A387E1A8E998C009ACA4E /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		EB7C6DBA1A984AC200EB333A /* aristos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aristos.jpg; sourceTree = "<group>"; };
+		EB7C6DBC1A984D5400EB333A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		EB7C6DBD1A984D5400EB333A /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		EB7C6DC11A98513800EB333A /* LogoBlancoRes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoBlancoRes.png; sourceTree = "<group>"; };
 		EB851CE81A94362700D04766 /* Administrador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Administrador.h; sourceTree = "<group>"; };
 		EB851CE91A94362700D04766 /* Administrador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Administrador.m; sourceTree = "<group>"; };
 		EB851CEB1A9442ED00D04766 /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
@@ -131,9 +138,11 @@
 		EB07BE451A8D727F00622C7D /* SistemaEscolarMovil */ = {
 			isa = PBXGroup;
 			children = (
+				EB7C6DBA1A984AC200EB333A /* aristos.jpg */,
 				EB9FD01E1A96FDEE00A8FE75 /* email.png */,
 				EB9FD01C1A96FDD200A8FE75 /* info.png */,
 				EB9FD01A1A96FD9F00A8FE75 /* calendar.png */,
+				EB7C6DC11A98513800EB333A /* LogoBlancoRes.png */,
 				EB9FD0181A96FD1300A8FE75 /* home.png */,
 				EB9FD0131A96DB4C00A8FE75 /* LogoBlanco.jpg */,
 				EB1E9A511A8E6A6C00984BDF /* Logger */,
@@ -202,6 +211,8 @@
 				EB25CA6B1A8DB93B009011F2 /* CircularesTableViewController.m */,
 				EB9FD0151A96DFD800A8FE75 /* LoginViewController.h */,
 				EB9FD0161A96DFD800A8FE75 /* LoginViewController.m */,
+				EB7C6DBC1A984D5400EB333A /* HomeViewController.h */,
+				EB7C6DBD1A984D5400EB333A /* HomeViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -292,6 +303,7 @@
 				EB9FD01F1A96FDEE00A8FE75 /* email.png in Resources */,
 				EBC9749B1A959C6D0089048F /* aristos_logo.png in Resources */,
 				EB9FD01D1A96FDD200A8FE75 /* info.png in Resources */,
+				EB7C6DC21A98513800EB333A /* LogoBlancoRes.png in Resources */,
 				EB07BE551A8D727F00622C7D /* Main.storyboard in Resources */,
 				EB07BE5A1A8D727F00622C7D /* LaunchScreen.xib in Resources */,
 				EBC974991A959A200089048F /* Logo.jpg in Resources */,
@@ -300,6 +312,7 @@
 				EB9FD0141A96DB4C00A8FE75 /* LogoBlanco.jpg in Resources */,
 				EB851CEC1A9442ED00D04766 /* TableCell.xib in Resources */,
 				EB07BE571A8D727F00622C7D /* Images.xcassets in Resources */,
+				EB7C6DBB1A984AC200EB333A /* aristos.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +361,7 @@
 				EB9FD0171A96DFD800A8FE75 /* LoginViewController.m in Sources */,
 				EB25CA691A8DB3E6009011F2 /* AFNetworkActivityLogger.m in Sources */,
 				EBF0F9BA1A8D76E300B54D57 /* ElementoEscolar.m in Sources */,
+				EB7C6DBE1A984D5400EB333A /* HomeViewController.m in Sources */,
 				EB8F4FED1A969C3800C1E089 /* Evento.m in Sources */,
 				EB07BE4C1A8D727F00622C7D /* AppDelegate.m in Sources */,
 				EB1E9A5A1A8E711B00984BDF /* CalendarViewController.m in Sources */,
