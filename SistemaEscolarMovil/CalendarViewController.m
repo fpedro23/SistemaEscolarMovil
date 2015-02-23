@@ -10,6 +10,7 @@
 #import "ElementoEscolar.h"
 #import "ElementoTableViewCell.h"
 #import "EventDetailViewController.h"
+#import "Evento.h"
 
 @implementation CalendarViewController
 @synthesize eventsByDate;
@@ -299,10 +300,14 @@
     ElementoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ElementViewCell"];
     
     
-    NSString *dateString = [NSDateFormatter localizedStringFromDate:[(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row]  fecha]
-                                                          dateStyle:NSDateFormatterLongStyle
+    NSString *dateString = [NSDateFormatter localizedStringFromDate:[(Evento*)[self.dayEvents objectAtIndex:indexPath.row]  fecha]
+                                                          dateStyle:NSDateFormatterMediumStyle
                                                           timeStyle:NSDateFormatterNoStyle];
-    //dateString = [NSString stringWithFormat:@"Publicada el: %@" ,dateString];
+    dateString = [NSString stringWithFormat:@"%@, %@"
+                  ,dateString,[(Evento*)[self.dayEvents objectAtIndex:indexPath.row] horaInicio]];
+    
+    
+    
     
     if (cell == nil)
     {
