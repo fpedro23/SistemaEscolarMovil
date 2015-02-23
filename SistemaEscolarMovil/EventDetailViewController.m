@@ -9,6 +9,7 @@
 #import "EventDetailViewController.h"
 
 #import "Administrador.h"
+#import "Evento.h"
 
 
 
@@ -19,7 +20,6 @@
     [super viewDidLoad];
     self.eventStore = [[EKEventStore alloc] init];
     // The Add button is initially disabled
-    
     if(self.isEvent){
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent:)];
         
@@ -38,9 +38,15 @@
     
     NSString *stringRemitente = [NSString stringWithFormat:@"Remitente: %@",self.elementoEscolar.administrador.nombreAdministrador];
     
-    [self.labelTitulo setText:elementoEscolar.titulo];
     
-    [self.labelFecha setText:[NSString stringWithFormat:@"Emitida: %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha]]];
+    if(self.isEvent){
+        
+        [self.labelFecha setText:[NSString stringWithFormat:@"Fecha: %@, %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha],[(Evento*)self.elementoEscolar horaInicio]]];
+
+    }
+    else {
+        [self.labelFecha setText:[NSString stringWithFormat:@"Emitida: %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha]]];
+    }
     [self.labelRemitente setText:stringRemitente];
     [self.contenidoTextView setText:elementoEscolar.contenido];
     [_contenidoTextView scrollRangeToVisible:NSMakeRange(0, 0)];
@@ -78,6 +84,8 @@
     
     return dateFormatter;
 }
+
+
 
 #pragma mark -
 #pragma mark Access Calendar
@@ -139,6 +147,42 @@
 
 }
 
+#pragma mark -
+#pragma mark Generate dates
+
+-(NSDate*)generateStartDate{
+    NSString *stringDate;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
+
+    
+    stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaInicio] ];
+    
+    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
+    NSDate *fechaInicio = [formatter dateFromString:stringDate];
+    
+    return fechaInicio;
+}
+
+
+-(NSDate*)generateEndDate{
+    NSString *stringDate;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
+    
+    
+    stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaFinal] ];
+    
+    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
+    NSDate *fechaInicio = [formatter dateFromString:stringDate];
+    
+    return fechaInicio;
+}
+
 
 #pragma mark -
 #pragma mark Add a new event
@@ -151,10 +195,13 @@
     EKEventEditViewController *addController = [[EKEventEditViewController alloc] init];
     EKEvent *newEvent = [EKEvent eventWithEventStore:self.eventStore];
 
-    newEvent.title = self.elementoEscolar.titulo;
-    newEvent.calendar = self.defaultCalendar;
-    addController.event = newEvent;
-    addController.editing = NO;
+    newEvent.title          = self.elementoEscolar.titulo;
+    newEvent.calendar       = self.defaultCalendar;
+    newEvent.startDate      = [self generateStartDate];
+    newEvent.endDate        = [self generateEndDate];
+    
+    addController.event     = newEvent;
+    addController.editing   = NO;
     
     // Set addController's event store to the current event store
     addController.eventStore = self.eventStore;

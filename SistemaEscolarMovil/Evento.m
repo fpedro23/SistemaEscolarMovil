@@ -7,6 +7,9 @@
 //
 
 #import "Evento.h"
+#import "NSValueTransformer+MTLPredefinedTransformerAdditions.h"
+#import "MTLValueTransformer.h"
+
 
 @implementation Evento
 
@@ -23,5 +26,8 @@
              @"horaFinal" : @"horaFinal"
              };
 }
+
+
+
 
 @end

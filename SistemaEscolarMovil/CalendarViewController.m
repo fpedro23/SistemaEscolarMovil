@@ -412,6 +412,42 @@
     
 }
 
+#pragma mark -
+#pragma mark Generate dates
+
+-(NSDate*)generateStartDate{
+    NSString *stringDate;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
+    
+    
+    stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaInicio] ];
+    
+    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
+    NSDate *fechaInicio = [formatter dateFromString:stringDate];
+    
+    return fechaInicio;
+}
+
+
+-(NSDate*)generateEndDate{
+    NSString *stringDate;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
+    
+    
+    stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaFinal] ];
+    
+    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
+    NSDate *fechaInicio = [formatter dateFromString:stringDate];
+    
+    return fechaInicio;
+}
+
 
 #pragma mark -
 #pragma mark Add a new event
@@ -423,12 +459,14 @@
     // Create an instance of EKEventEditViewController
     EKEventEditViewController *addController = [[EKEventEditViewController alloc] init];
     EKEvent *newEvent = [EKEvent eventWithEventStore:self.eventStore];
-    ElementoEscolar *elementoEscolar = (ElementoEscolar*)sender;
     
-    newEvent.title = elementoEscolar.titulo;
-    newEvent.calendar = self.defaultCalendar;
-    addController.event = newEvent;
-    addController.editing = NO;
+    newEvent.title          = self.elementoEscolar.titulo;
+    newEvent.calendar       = self.defaultCalendar;
+    newEvent.startDate      = [self generateStartDate];
+    newEvent.endDate        = [self generateEndDate];
+    
+    addController.event     = newEvent;
+    addController.editing   = NO;
     
     // Set addController's event store to the current event store
     addController.eventStore = self.eventStore;
