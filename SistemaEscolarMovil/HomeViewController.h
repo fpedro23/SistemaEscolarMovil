@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ElementoEscolar.h"
 
 @interface HomeViewController : UIViewController
+@property (strong,nonatomic) ElementoEscolar *elementoEscolar;
 
 @end

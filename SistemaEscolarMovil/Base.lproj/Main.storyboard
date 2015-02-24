@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="S9W-o0-jOc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -111,7 +111,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ml-Vb-ljf" customClass="JTCalendarContentView">
-                                <rect key="frame" x="5" y="127" width="584" height="255"/>
+                                <rect key="frame" x="5" y="131" width="584" height="255"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mBz-Vl-YYC">
@@ -356,7 +356,7 @@
         <!--Event Detail View Controller-->
         <scene sceneID="ktI-Xd-YHq">
             <objects>
-                <viewController id="8HI-ry-L7S" customClass="EventDetailViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="EventDetail" storyboardIdentifier="EventDetail" id="8HI-ry-L7S" customClass="EventDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sf0-aS-OW0"/>
                         <viewControllerLayoutGuide type="bottom" id="9kf-Y6-ftf"/>
@@ -495,6 +495,6 @@
         <image name="info.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f2E-lQ-fTi"/>
+        <segue reference="N0O-bD-gUg"/>
     </inferredMetricsTieBreakers>
 </document>

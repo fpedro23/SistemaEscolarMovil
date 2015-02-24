@@ -15,10 +15,8 @@
 @implementation AppDelegate 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    //[[AFNetworkActivityLogger sharedLogger] startLogging];
     [[ZeroPush shared] resetBadge];
-    application.applicationIconBadgeNumber = 0;
-
     return YES;
 }
 
@@ -50,14 +48,13 @@
 }
 
 
+
+
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    //Insertar un objeto de tipo administrador en el diccionario
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushNotification" object:nil userInfo:userInfo];
+
     
-    //Hacer un mapping de la propiedad administradoridAdministrador a un objecto de administrador.
-    
-    //Ejecutar la segue con ese objeto de administrador
-    NSLog(@"Appp sfoifsofs");
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)tokenData
