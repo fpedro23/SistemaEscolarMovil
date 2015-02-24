@@ -16,6 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[AFNetworkActivityLogger sharedLogger] startLogging];
+    [[ZeroPush shared] resetBadge];
+    application.applicationIconBadgeNumber = 0;
 
     return YES;
 }
@@ -40,8 +42,22 @@
     [ZeroPush engageWithAPIKey:@"iosdev_xhtqe3444berxEqfYhgX" delegate:self];
     
     //now ask the user if they want to recieve push notifications. You can place this in another part of your app.
+    application.applicationIconBadgeNumber = 0;
+
     [[ZeroPush shared] registerForRemoteNotifications];
+    [[ZeroPush shared] resetBadge];
     
+}
+
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    //Insertar un objeto de tipo administrador en el diccionario
+    
+    //Hacer un mapping de la propiedad administradoridAdministrador a un objecto de administrador.
+    
+    //Ejecutar la segue con ese objeto de administrador
+    NSLog(@"Appp sfoifsofs");
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)tokenData
@@ -53,6 +69,8 @@
     NSString *tokenString = [ZeroPush deviceTokenFromData:tokenData];
     NSLog(@"%@", tokenString);
     
+    
+
     // For instance you can associate it with a user's email address
     // [[ZeroPush shared] subscribeToChannel:@"user@example.com"];
     // You can then use the /broadcast endpoint to notify all devices subscribed to that email address. No need to save tokens!

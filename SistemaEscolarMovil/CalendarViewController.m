@@ -67,6 +67,7 @@
     if (indexPath == nil) {
         NSLog(@"long press on table view but not on a row");
     } else if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        self.elementoEscolar = (ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row];
         [self addEvent:(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row]];
     } else {
         NSLog(@"gestureRecognizer.state = %ld", gestureRecognizer.state);
@@ -418,6 +419,8 @@
 -(NSDate*)generateStartDate{
     NSString *stringDate;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+
     [formatter setDateFormat:@"yyyy-MM-dd"];
     
     NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
@@ -434,7 +437,9 @@
 
 -(NSDate*)generateEndDate{
     NSString *stringDate;
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     
     NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
@@ -456,6 +461,8 @@
 // A new event is added to Calendar when the user taps the "Done" button in the above view controller.
 - (void)addEvent:(id)sender
 {
+    
+    ElementoEscolar  *newElementoEscolar = (ElementoEscolar*)sender;
     // Create an instance of EKEventEditViewController
     EKEventEditViewController *addController = [[EKEventEditViewController alloc] init];
     EKEvent *newEvent = [EKEvent eventWithEventStore:self.eventStore];

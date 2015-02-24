@@ -30,6 +30,7 @@
 
     self.title = self.elementoEscolar.titulo;
     
+    [self.labelTitulo setText:self.elementoEscolar.titulo];
     self.labelTitulo.adjustsFontSizeToFitWidth = YES;
     self.labelTitulo.numberOfLines = 2;
     self.labelTitulo.clipsToBounds = YES;
@@ -153,6 +154,7 @@
 -(NSDate*)generateStartDate{
     NSString *stringDate;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     
     NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
@@ -170,6 +172,7 @@
 -(NSDate*)generateEndDate{
     NSString *stringDate;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     
     NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];

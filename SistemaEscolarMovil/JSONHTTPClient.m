@@ -20,7 +20,7 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://10.25.202.110:8080/SistemaEscolar/"]]; //readCircular?mobile=true
+        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.168.100.36:8080/SistemaEscolar"]]; //readCircular?mobile=true
     });
     
     return _sharedJSONAPIClient;
