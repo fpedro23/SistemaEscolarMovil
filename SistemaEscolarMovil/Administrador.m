@@ -16,7 +16,7 @@
     return @{
              @"idAdministrador" : @"idAdministrador",
              @"nombreAdministrador" : @"nombreAdministrador",
-             @"success": @"succes"
+             @"success": @"success"
              };
 }
 

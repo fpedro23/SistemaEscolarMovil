@@ -15,7 +15,7 @@
 @implementation AppDelegate 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //[[AFNetworkActivityLogger sharedLogger] startLogging];
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
     [[ZeroPush shared] resetBadge];
     return YES;
 }
