@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "EventDetailViewController.h"
+#import "Zeropush.h"
 
 @interface HomeViewController ()
 
@@ -18,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationReceived:) name:@"pushNotification" object:nil];
-
+    //now ask the user if they want to recieve push notifications. You can place this in another part of your app.
+    [[ZeroPush shared] registerForRemoteNotifications];
     // Do any additional setup after loading the view.
 }
 
