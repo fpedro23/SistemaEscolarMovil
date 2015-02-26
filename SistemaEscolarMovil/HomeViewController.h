@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ElementoEscolar.h"
+#import "JSONHTTPClient.h"
 
-@interface HomeViewController : UIViewController
+
+@interface HomeViewController : UIViewController <JSONHTTPClientDelegate>
 @property (strong,nonatomic) ElementoEscolar *elementoEscolar;
+@property JSONHTTPClient *jsonClient;
 
 @end

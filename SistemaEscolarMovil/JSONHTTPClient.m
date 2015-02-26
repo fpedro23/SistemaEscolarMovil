@@ -20,7 +20,7 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://65.99.205.69:8080/Aristos"]]; //readCircular?mobile=true
+        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://65.99.205.69:8080/Aristos"]];
     });
     
     return _sharedJSONAPIClient;
@@ -61,6 +61,28 @@
                 [self.delegate JSONHTTPClientDelegate:self didResponseToLogin:administratorsData];
                 
             }
+        }
+        else if ([servletName isEqualToString:@"mobileReadCircularByID"]){
+            NSArray *circularData = [self deserializeElementFromJSON:responseObject];
+            if([self.delegate respondsToSelector:@selector(JSONHTTPClientDelegate:didResponseToElements:)]){
+                [self.delegate JSONHTTPClientDelegate:self didResponseToElements:circularData];
+                
+            }
+            
+        }else if([servletName isEqualToString:@"mobileReadAvisoByID"]){
+            NSArray *avisoData = [self deserializeElementFromJSON:responseObject];
+            if([self.delegate respondsToSelector:@selector(JSONHTTPClientDelegate:didResponseToElements:)]){
+                [self.delegate JSONHTTPClientDelegate:self didResponseToElements:avisoData];
+                
+            }
+            
+        }else if ([servletName isEqualToString:@"mobileReadEventoByID"]){
+            NSArray *eventosData = [self deserializeEventFromJSON:responseObject];
+            if([self.delegate respondsToSelector:@selector(JSONHTTPClientDelegate:didResponseToEvents:)]){
+                [self.delegate JSONHTTPClientDelegate:self didResponseToEvents:eventosData];
+                
+            }
+            
         }
         else{
             NSArray *elementsData = [self deserializeElementsFromJSON:JSONResponse];
@@ -128,5 +150,33 @@
     
     return works;
 }
+
+
+
+- (NSArray *)deserializeElementFromJSON:(NSDictionary *)resultJSON
+{
+    NSError *error;
+    NSArray *works = [MTLJSONAdapter modelOfClass:[ElementoEscolar class] fromJSONDictionary:resultJSON error:&error];
+    if (error) {
+        NSLog(@"Couldn't convert Elements JSON to Element models: %@", error);
+        return nil;
+    }
+    
+    return works;
+}
+
+
+- (NSArray *)deserializeEventFromJSON:(NSDictionary *)resultJSON
+{
+    NSError *error;
+    NSArray *works = [MTLJSONAdapter modelOfClass:[Evento class] fromJSONDictionary:resultJSON error:&error];
+    if (error) {
+        NSLog(@"Couldn't convert Elements JSON to Element models: %@", error);
+        return nil;
+    }
+    
+    return works;
+}
+
 
 @end
