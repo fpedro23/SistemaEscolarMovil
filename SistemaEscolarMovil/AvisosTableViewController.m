@@ -110,6 +110,7 @@
     
     cell.titleLabel.adjustsFontSizeToFitWidth = YES;
     cell.titleLabel.text = [(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] titulo];
+    cell.remitenteLabel.adjustsFontSizeToFitWidth = YES;
     cell.remitenteLabel.text = [[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] administrador]nombreAdministrador];
     cell.fechaEmisionLabel.text = dateString;
     

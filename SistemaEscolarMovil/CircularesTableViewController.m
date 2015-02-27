@@ -90,7 +90,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.elementsData count];
+    
+        return [self.elementsData count];
+
+ 
+    
 }
 
 
@@ -111,6 +115,8 @@
     
     cell.titleLabel.adjustsFontSizeToFitWidth = YES;
     cell.titleLabel.text = [(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] titulo];
+    cell.remitenteLabel.adjustsFontSizeToFitWidth = YES;
+    //cell.remitenteLabel.minimumScaleFactor = .5;
     cell.remitenteLabel.text = [[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] administrador]nombreAdministrador];
     cell.fechaEmisionLabel.text = dateString;
     

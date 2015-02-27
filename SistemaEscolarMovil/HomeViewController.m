@@ -68,7 +68,8 @@
     
 
     NSDictionary *userInfo = notification.userInfo;
-    
+    _jsonClient.delegate = self;
+
     //Basado en el tipo ejecutar el metodo correspondiente.
     NSMutableDictionary *parameters = [NSMutableDictionary new];
     
