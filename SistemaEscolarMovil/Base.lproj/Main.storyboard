@@ -48,7 +48,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LR-MK-O49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521" y="-283"/>
+            <point key="canvasLocation" x="1553" y="-283"/>
         </scene>
         <!--Avisos-->
         <scene sceneID="J26-CJ-JD4">
@@ -111,11 +111,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ml-Vb-ljf" customClass="JTCalendarContentView">
-                                <rect key="frame" x="5" y="131" width="584" height="255"/>
+                                <rect key="frame" x="5" y="131" width="584" height="211"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mBz-Vl-YYC">
-                                <rect key="frame" x="0.0" y="390" width="600" height="148"/>
+                                <rect key="frame" x="0.0" y="358" width="600" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="mtW-uh-RSL" detailTextLabel="Ltc-EW-ULX" rowHeight="50" style="IBUITableViewCellStyleValue1" id="fgF-TJ-itg">
@@ -148,9 +148,10 @@
                             <constraint firstItem="jgc-Eo-OBB" firstAttribute="leading" secondItem="DFs-4P-ldY" secondAttribute="leadingMargin" id="JE8-C9-vxg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2ml-Vb-ljf" secondAttribute="trailing" constant="-11" id="aNA-Gg-DQs"/>
                             <constraint firstItem="2ml-Vb-ljf" firstAttribute="leading" secondItem="DFs-4P-ldY" secondAttribute="leadingMargin" constant="-11" id="drf-jF-iEO"/>
+                            <constraint firstItem="mBz-Vl-YYC" firstAttribute="top" secondItem="2ml-Vb-ljf" secondAttribute="bottom" constant="16" id="dzl-zd-tR1"/>
                             <constraint firstItem="jgc-Eo-OBB" firstAttribute="trailing" secondItem="DFs-4P-ldY" secondAttribute="trailingMargin" id="h6d-hB-n2m"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mBz-Vl-YYC" secondAttribute="trailing" constant="-11" id="m0v-QM-crn"/>
-                            <constraint firstItem="dzm-QB-Rnh" firstAttribute="top" secondItem="mBz-Vl-YYC" secondAttribute="bottom" constant="13" id="maX-bs-VFi"/>
+                            <constraint firstItem="dzm-QB-Rnh" firstAttribute="top" secondItem="mBz-Vl-YYC" secondAttribute="bottom" id="maX-bs-VFi"/>
                             <constraint firstItem="mBz-Vl-YYC" firstAttribute="leading" secondItem="DFs-4P-ldY" secondAttribute="leadingMargin" constant="-11" id="t1Y-Ct-jpB"/>
                         </constraints>
                     </view>
@@ -169,7 +170,7 @@
         <!--Login View Controller-->
         <scene sceneID="M7q-6k-UEH">
             <objects>
-                <viewController id="S9W-o0-jOc" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LoginScreen" storyboardIdentifier="LoginScreen" id="S9W-o0-jOc" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kHX-9i-s7I"/>
                         <viewControllerLayoutGuide type="bottom" id="YgP-xI-OxI"/>
@@ -328,7 +329,13 @@
                             <constraint firstAttribute="centerX" secondItem="o5y-Pm-mLx" secondAttribute="centerX" id="mfO-By-pBc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Inicio" id="oma-Qb-u46"/>
+                    <navigationItem key="navigationItem" title="Inicio" id="oma-Qb-u46">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="H9Y-jT-yFW">
+                            <connections>
+                                <action selector="logoutPressed:" destination="pek-YR-DbN" id="yHL-uL-P98"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPq-rS-XjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

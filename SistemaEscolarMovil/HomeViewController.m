@@ -10,6 +10,7 @@
 #import "EventDetailViewController.h"
 #import "Zeropush.h"
 #import "Evento.h"
+#import "LoginViewController.h"
 
 @interface HomeViewController ()
 
@@ -64,6 +65,16 @@
 
 
 
+- (IBAction)logoutPressed:(id)sender {
+
+    LoginViewController *login =
+    [self.storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
+    
+    [self presentViewController:login animated:YES completion:nil];
+    
+}
+
+
 -(void)pushNotificationReceived:(NSNotification*)notification{
     
 
@@ -87,10 +98,7 @@
     }else {
         [_jsonClient performPOSTRequestWithParameters:parameters toServlet:@"mobileReadEventoByID" withOptions:nil];
 
-        
     }
-    
-    
 
 }
 

@@ -40,9 +40,7 @@
     [ZeroPush engageWithAPIKey:@"iosdev_xhtqe3444berxEqfYhgX" delegate:self];
     
     //now ask the user if they want to recieve push notifications. You can place this in another part of your app.
-    application.applicationIconBadgeNumber = 0;
 
-    [[ZeroPush shared] registerForRemoteNotifications];
     [[ZeroPush shared] resetBadge];
     
 }

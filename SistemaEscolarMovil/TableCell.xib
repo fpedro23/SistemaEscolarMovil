@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +14,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wz3-We-PPS" id="EE6-fv-77n">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Dirección" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFA-rM-5IE">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFA-rM-5IE">
                         <rect key="frame" x="207" y="17" width="75" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="OHh-Wr-YFx"/>
@@ -23,7 +24,7 @@
                         <color key="textColor" red="0.0" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="23 de Diciembre, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI8-0X-pJb">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 de Diciembre, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI8-0X-pJb">
                         <rect key="frame" x="19" y="30" width="180" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="2fs-pM-QeP"/>
@@ -33,7 +34,7 @@
                         <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Titulo 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000027" translatesAutoresizingMaskIntoConstraints="NO" id="hAe-zm-HMT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000027" translatesAutoresizingMaskIntoConstraints="NO" id="hAe-zm-HMT">
                         <rect key="frame" x="19" y="10" width="180" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="dek-GC-pTE"/>
@@ -42,8 +43,32 @@
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dek-GC-pTE"/>
+                                <exclude reference="qxm-gl-6hD"/>
+                            </mask>
+                        </variation>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="hAe-zm-HMT" firstAttribute="leading" secondItem="EE6-fv-77n" secondAttribute="leadingMargin" constant="11" id="13H-FX-Rys"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kFA-rM-5IE" secondAttribute="trailing" constant="-3" id="2ta-Hi-hjA"/>
+                    <constraint firstItem="hAe-zm-HMT" firstAttribute="top" secondItem="EE6-fv-77n" secondAttribute="topMargin" constant="2" id="8tI-Es-Qok"/>
+                    <constraint firstItem="hAe-zm-HMT" firstAttribute="top" secondItem="EE6-fv-77n" secondAttribute="topMargin" constant="2" id="DyP-53-MOn"/>
+                    <constraint firstItem="kFA-rM-5IE" firstAttribute="top" secondItem="EE6-fv-77n" secondAttribute="topMargin" constant="9" id="KIp-db-Cq7"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eI8-0X-pJb" secondAttribute="trailing" constant="80" id="WJO-en-bOS"/>
+                    <constraint firstItem="kFA-rM-5IE" firstAttribute="leading" secondItem="hAe-zm-HMT" secondAttribute="trailing" constant="8" id="YZB-C5-28K"/>
+                    <constraint firstItem="eI8-0X-pJb" firstAttribute="top" secondItem="EE6-fv-77n" secondAttribute="topMargin" constant="22" id="bZG-y1-NVV"/>
+                    <constraint firstItem="eI8-0X-pJb" firstAttribute="leading" secondItem="EE6-fv-77n" secondAttribute="leadingMargin" constant="11" id="gS8-t1-L2t"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="hAe-zm-HMT" secondAttribute="trailing" constant="80" id="zOn-3o-yVv"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="DyP-53-MOn"/>
+                        <exclude reference="YZB-C5-28K"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="fechaEmisionLabel" destination="eI8-0X-pJb" id="lyG-Xm-Y1t"/>
