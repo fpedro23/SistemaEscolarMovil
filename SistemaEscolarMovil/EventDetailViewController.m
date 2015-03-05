@@ -42,8 +42,12 @@
     
     if(self.isEvent){
         
-        [self.labelFecha setText:[NSString stringWithFormat:@"Fecha: %@, %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha],[(Evento*)self.elementoEscolar horaInicio]]];
-
+        if ([(Evento*)self.elementoEscolar horaInicio]!=nil) {
+            [self.labelFecha setText:[NSString stringWithFormat:@"Fecha: %@, %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha],[(Evento*)self.elementoEscolar horaInicio]]];
+        }else{
+            [self.labelFecha setText:[NSString stringWithFormat:@"Fecha: %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha]]];
+        }
+        
     }
     else {
         [self.labelFecha setText:[NSString stringWithFormat:@"Emitida: %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha]]];
@@ -171,14 +175,20 @@
 
 -(NSDate*)generateEndDate{
     NSString *stringDate;
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     
     NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
     
+    if([(Evento*)self.elementoEscolar horaFinal]!=nil){
+        stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaFinal] ];
+    }else{
+        stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaInicio] ];
+        
+    }
     
-    stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaFinal] ];
     
     [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
     NSDate *fechaInicio = [formatter dateFromString:stringDate];

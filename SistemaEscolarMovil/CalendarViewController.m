@@ -304,8 +304,15 @@
     NSString *dateString = [NSDateFormatter localizedStringFromDate:[(Evento*)[self.dayEvents objectAtIndex:indexPath.row]  fecha]
                                                           dateStyle:NSDateFormatterMediumStyle
                                                           timeStyle:NSDateFormatterNoStyle];
-    dateString = [NSString stringWithFormat:@"%@, %@"
-                  ,dateString,[(Evento*)[self.dayEvents objectAtIndex:indexPath.row] horaInicio]];
+    
+    if ([(Evento*)[self.dayEvents objectAtIndex:indexPath.row] horaInicio]!=nil) {
+        dateString = [NSString stringWithFormat:@"%@, %@"
+                      ,dateString
+                      ,[(Evento*)[self.dayEvents objectAtIndex:indexPath.row] horaInicio]];
+    }else{
+        dateString = [NSString stringWithFormat:@"%@",dateString];
+    }
+    
     
     
     
@@ -419,6 +426,7 @@
 
 -(NSDate*)generateStartDate{
     NSString *stringDate;
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
 
@@ -445,8 +453,13 @@
     
     NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
     
-    
-    stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaFinal] ];
+    if([(Evento*)self.elementoEscolar horaFinal]!=nil){
+            stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaFinal] ];
+    }else{
+            stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaInicio] ];
+        
+    }
+
     
     [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
     NSDate *fechaInicio = [formatter dateFromString:stringDate];
