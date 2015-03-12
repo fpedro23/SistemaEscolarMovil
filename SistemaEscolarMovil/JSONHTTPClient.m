@@ -41,7 +41,6 @@
 
 
 -(void)performPOSTRequestWithParameters:(NSDictionary *)parameters toServlet:(NSString *)servletName withOptions:(NSString *)option{
-    NSLog(@"Performing post to: %@",servletName);
     self.servletName = servletName;
     self.parameters = parameters;
     [self GET:servletName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {

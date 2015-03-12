@@ -63,7 +63,6 @@
         
     }
     else{
-        NSLog(@"Succes");
         [self performSegueWithIdentifier:@"showViews" sender:sender];
         
         return YES;
@@ -78,7 +77,5 @@
     [dictionary setObject:[_usuarioTextField text] forKey:@"nombre"];
     [dictionary setObject:[_passwordTextField text] forKey:@"password"];
     [_jsonClient performPOSTRequestWithParameters:dictionary toServlet:@"mobileLogin" withOptions:nil];
-
-    NSLog(@"Action Pressed");
 }
 @end

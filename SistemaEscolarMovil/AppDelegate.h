@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZeroPush.h"
-
+#import "Zeropush.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate,ZeroPushDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

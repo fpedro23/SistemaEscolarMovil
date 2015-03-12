@@ -57,6 +57,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationReceived:) name:@"pushNotification" object:nil];
     //now ask the user if they want to recieve push notifications. You can place this in another part of your app.
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
+    [ZeroPush engageWithAPIKey:@"iosprod_8KN8qkdVN2N4empsY6Kk" delegate:self];
     [[ZeroPush shared] registerForRemoteNotifications];
     // Do any additional setup after loading the view.
     _jsonClient.delegate = self;

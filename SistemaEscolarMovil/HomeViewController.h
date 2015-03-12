@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ElementoEscolar.h"
 #import "JSONHTTPClient.h"
+#import "ZeroPush.h"
 
-
-@interface HomeViewController : UIViewController <JSONHTTPClientDelegate>
+@interface HomeViewController : UIViewController <JSONHTTPClientDelegate, ZeroPushDelegate>
 @property (strong,nonatomic) ElementoEscolar *elementoEscolar;
 @property JSONHTTPClient *jsonClient;
 

@@ -80,7 +80,7 @@
 		EB9FD0181A96FD1300A8FE75 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		EB9FD01A1A96FD9F00A8FE75 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		EB9FD01C1A96FDD200A8FE75 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
-		EB9FD01E1A96FDEE00A8FE75 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		EB9FD01E1A96FDEE00A8FE75 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email.png; path = SistemaEscolarMovil/email.png; sourceTree = "<group>"; };
 		EBC974981A959A200089048F /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
 		EBC9749A1A959C6D0089048F /* aristos_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aristos_logo.png; sourceTree = "<group>"; };
 		EBF0F9B81A8D76E300B54D57 /* ElementoEscolar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElementoEscolar.h; path = ../ElementoEscolar.h; sourceTree = "<group>"; };
@@ -119,6 +119,7 @@
 		EB07BE3A1A8D727F00622C7D = {
 			isa = PBXGroup;
 			children = (
+				EB9FD01E1A96FDEE00A8FE75 /* email.png */,
 				EB07BE451A8D727F00622C7D /* SistemaEscolarMovil */,
 				EB07BE621A8D727F00622C7D /* SistemaEscolarMovilTests */,
 				EB07BE441A8D727F00622C7D /* Products */,
@@ -139,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				EB7C6DBA1A984AC200EB333A /* aristos.jpg */,
-				EB9FD01E1A96FDEE00A8FE75 /* email.png */,
 				EB9FD01C1A96FDD200A8FE75 /* info.png */,
 				EB9FD01A1A96FD9F00A8FE75 /* calendar.png */,
 				EB7C6DC11A98513800EB333A /* LogoBlancoRes.png */,
@@ -273,7 +273,6 @@
 				TargetAttributes = {
 					EB07BE421A8D727F00622C7D = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = D7K92GRWLG;
 					};
 				};
 			};
