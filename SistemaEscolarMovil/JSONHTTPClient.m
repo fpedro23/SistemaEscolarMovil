@@ -20,7 +20,7 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://65.99.205.69:8080/Aristos"]];
+        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://10.25.199.90:8000/aristos"]];
     });
     
     return _sharedJSONAPIClient;
@@ -47,7 +47,7 @@
         
         NSArray *JSONResponse = responseObject;
         //Eventos
-        if ([servletName isEqual:@"mobileReadEvents"]) {
+        if ([servletName isEqual:@"eventos"]) {
             NSArray *eventosData = [self deserializeEventsFromJSON:JSONResponse];
             if([self.delegate respondsToSelector:@selector(JSONHTTPClientDelegate:didResponseToEvents:)]){
                 [self.delegate JSONHTTPClientDelegate:self didResponseToEvents:eventosData];
@@ -61,21 +61,21 @@
                 
             }
         }
-        else if ([servletName isEqualToString:@"mobileReadCircularByID"]){
+        else if ([servletName isEqualToString:@"circular"]){
             NSArray *circularData = [self deserializeElementFromJSON:responseObject];
             if([self.delegate respondsToSelector:@selector(JSONHTTPClientDelegate:didResponseToElements:)]){
                 [self.delegate JSONHTTPClientDelegate:self didResponseToElements:circularData];
                 
             }
             
-        }else if([servletName isEqualToString:@"mobileReadAvisoByID"]){
+        }else if([servletName isEqualToString:@"aviso"]){
             NSArray *avisoData = [self deserializeElementFromJSON:responseObject];
             if([self.delegate respondsToSelector:@selector(JSONHTTPClientDelegate:didResponseToElements:)]){
                 [self.delegate JSONHTTPClientDelegate:self didResponseToElements:avisoData];
                 
             }
             
-        }else if ([servletName isEqualToString:@"mobileReadEventoByID"]){
+        }else if ([servletName isEqualToString:@"evento"]){
             NSArray *eventosData = [self deserializeEventFromJSON:responseObject];
             if([self.delegate respondsToSelector:@selector(JSONHTTPClientDelegate:didResponseToEvents:)]){
                 [self.delegate JSONHTTPClientDelegate:self didResponseToEvents:eventosData];

@@ -17,17 +17,37 @@
 {
     // model_property_name : json_field_name
     return @{
-             @"idCircular" : @"idCircular",
-             @"titulo" : @"titulo",
-             @"fecha" : @"fecha",
-             @"contenido" : @"contenido",
-             @"administrador" : @"administradoridAdministrador",
-             @"horaInicio" : @"horaInicio",
-             @"horaFinal" : @"horaFinal"
+             @"idCircular" : @"pk",
+             @"titulo" : @"fields.titulo",
+             @"fecha" : @"fields.fechaInicio",
+             @"contenido" : @"fields.contenido",
+             @"administrador" : @"fields.remitente",
+             @"fechaFin" : @"fields.fechaFin",
              };
 }
 
 
++ (NSValueTransformer *)fechaJSONTransformer{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+    
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *dateStr) {
+        return [dateFormatter dateFromString:dateStr];
+    } reverseBlock:^(NSDate *date) {
+        return [dateFormatter stringFromDate:date];
+    }];
+}
+
++ (NSValueTransformer *)fechaFinJSONTransformer{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+    
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *dateStr) {
+        return [dateFormatter dateFromString:dateStr];
+    } reverseBlock:^(NSDate *date) {
+        return [dateFormatter stringFromDate:date];
+    }];
+}
 
 
 @end

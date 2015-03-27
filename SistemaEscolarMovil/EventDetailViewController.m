@@ -37,21 +37,11 @@
     self.contenidoTextView.backgroundColor = [UIColor clearColor];
 
     
-    NSString *stringRemitente = [NSString stringWithFormat:@"Remitente: %@",self.elementoEscolar.administrador.nombreAdministrador];
+    NSString *stringRemitente = [NSString stringWithFormat:@"Remitente: %@",self.elementoEscolar.administrador];
     
     
-    if(self.isEvent){
-        
-        if ([(Evento*)self.elementoEscolar horaInicio]!=nil) {
-            [self.labelFecha setText:[NSString stringWithFormat:@"Fecha: %@, %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha],[(Evento*)self.elementoEscolar horaInicio]]];
-        }else{
-            [self.labelFecha setText:[NSString stringWithFormat:@"Fecha: %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha]]];
-        }
-        
-    }
-    else {
         [self.labelFecha setText:[NSString stringWithFormat:@"Emitida: %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha]]];
-    }
+    
     [self.labelRemitente setText:stringRemitente];
     [self.contenidoTextView setText:elementoEscolar.contenido];
     [_contenidoTextView scrollRangeToVisible:NSMakeRange(0, 0)];
@@ -155,46 +145,6 @@
 #pragma mark -
 #pragma mark Generate dates
 
--(NSDate*)generateStartDate{
-    NSString *stringDate;
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-    
-    NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
-
-    
-    stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaInicio] ];
-    
-    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
-    NSDate *fechaInicio = [formatter dateFromString:stringDate];
-    
-    return fechaInicio;
-}
-
-
--(NSDate*)generateEndDate{
-    NSString *stringDate;
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-    
-    NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
-    
-    if([(Evento*)self.elementoEscolar horaFinal]!=nil){
-        stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaFinal] ];
-    }else{
-        stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaInicio] ];
-        
-    }
-    
-    
-    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
-    NSDate *fechaInicio = [formatter dateFromString:stringDate];
-    
-    return fechaInicio;
-}
 
 
 #pragma mark -
@@ -210,8 +160,8 @@
 
     newEvent.title          = self.elementoEscolar.titulo;
     newEvent.calendar       = self.defaultCalendar;
-    newEvent.startDate      = [self generateStartDate];
-    newEvent.endDate        = [self generateEndDate];
+    newEvent.startDate      = self.elementoEscolar.fecha;
+    newEvent.endDate        = self.elementoEscolar.fechaFin;
     
     addController.event     = newEvent;
     addController.editing   = NO;

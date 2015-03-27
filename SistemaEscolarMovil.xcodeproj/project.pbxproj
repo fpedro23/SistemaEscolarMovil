@@ -273,6 +273,7 @@
 				TargetAttributes = {
 					EB07BE421A8D727F00622C7D = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = D7K92GRWLG;
 					};
 				};
 			};
@@ -484,7 +485,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Aristos;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "141026c5-7311-4177-aa70-47bf279458da";
 			};
 			name = Debug;
 		};
@@ -499,7 +500,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Aristos;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "141026c5-7311-4177-aa70-47bf279458da";
 			};
 			name = Release;
 		};

@@ -17,14 +17,13 @@
 {
     // model_property_name : json_field_name
     return @{
-             @"idCircular" : @"idCircular",
-             @"titulo" : @"titulo",
-             @"fecha" : @"fecha",
-             @"contenido" : @"contenido",
-             @"administrador" : @"administradoridAdministrador"
+             @"idCircular" : @"field.pk",
+             @"titulo" : @"fields.titulo",
+             @"fecha" : @"fields.fechaPublicacion",
+             @"contenido" : @"fields.contenido",
+             @"administrador" : @"fields.remitente"
              };
 }
-
 
 + (NSValueTransformer *)fechaJSONTransformer{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -37,9 +36,7 @@
     }];
 }
 
-+ (NSValueTransformer *)administradorJSONTransformer {
-    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[Administrador class]];
-}
+
 
 
 

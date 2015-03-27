@@ -54,7 +54,7 @@
 
 
 -(void)getLatestAvisos{
-    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"mobileReadAvisos" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"avisos" withOptions:nil];
 }
 
 
@@ -63,7 +63,7 @@
     
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
     _jsonClient.delegate = self;
-    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"mobileReadAvisos" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"avisos" withOptions:nil];
     //http://192.168.100.36:8080/SistemaEscolar/readCircular?mobile=true
     
     
@@ -111,7 +111,7 @@
     cell.titleLabel.adjustsFontSizeToFitWidth = YES;
     cell.titleLabel.text = [(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] titulo];
     cell.remitenteLabel.adjustsFontSizeToFitWidth = YES;
-    cell.remitenteLabel.text = [[(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] administrador]nombreAdministrador];
+    cell.remitenteLabel.text = [(ElementoEscolar*)[self.elementsData objectAtIndex:indexPath.row] administrador];
     cell.fechaEmisionLabel.text = dateString;
     
     

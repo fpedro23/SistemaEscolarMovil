@@ -18,7 +18,7 @@
 @property NSString *titulo;
 @property NSString *contenido;
 @property NSDate   *fecha;
-@property Administrador   *administrador;
+@property NSString   *administrador;
 
 
 @end

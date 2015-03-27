@@ -11,7 +11,7 @@
 #import "JSONHTTPClient.h"
 #import <EventKit/EventKit.h>
 #import <EventKitUI/EventKitUI.h>
-#import "ElementoEscolar.h"
+#import "Evento.h"
 
 @interface CalendarViewController : UIViewController <EKEventEditViewDelegate,JTCalendarDataSource,JSONHTTPClientDelegate, UITableViewDataSource,UITableViewDelegate, UIGestureRecognizerDelegate>
 
@@ -40,7 +40,7 @@
 // Used to add events to Calendar
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
-@property ElementoEscolar *elementoEscolar;
+@property Evento *elementoEscolar;
 
 
 @end

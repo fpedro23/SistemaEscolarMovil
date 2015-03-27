@@ -9,6 +9,5 @@
 #import "ElementoEscolar.h"
 
 @interface Evento : ElementoEscolar
-@property NSString *horaInicio;
-@property NSString *horaFinal;
+@property NSDate *fechaFin;
 @end

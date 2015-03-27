@@ -30,7 +30,7 @@
 
 
 -(void)refreshTapped{
-    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"mobileReadEvents" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"eventos" withOptions:nil];
     [self createEvents];
     [self.calendar reloadData]; // Must be call in viewDidAppear
     [self.eventView reloadData];
@@ -83,7 +83,7 @@
 
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
     _jsonClient.delegate = self;
-    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"mobileReadEvents" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"eventos" withOptions:nil];
     self.eventView.dataSource = self;
     self.eventView.delegate = self;
     self.calendar = [JTCalendar new];
@@ -303,16 +303,7 @@
     
     NSString *dateString = [NSDateFormatter localizedStringFromDate:[(Evento*)[self.dayEvents objectAtIndex:indexPath.row]  fecha]
                                                           dateStyle:NSDateFormatterMediumStyle
-                                                          timeStyle:NSDateFormatterNoStyle];
-    
-    if ([(Evento*)[self.dayEvents objectAtIndex:indexPath.row] horaInicio]!=nil) {
-        dateString = [NSString stringWithFormat:@"%@, %@"
-                      ,dateString
-                      ,[(Evento*)[self.dayEvents objectAtIndex:indexPath.row] horaInicio]];
-    }else{
-        dateString = [NSString stringWithFormat:@"%@",dateString];
-    }
-    
+                                                          timeStyle:NSDateFormatterShortStyle];
     
     
     
@@ -326,7 +317,7 @@
     cell.titleLabel.adjustsFontSizeToFitWidth = YES;
     cell.titleLabel.text = [(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row] titulo];
     cell.remitenteLabel.adjustsFontSizeToFitWidth = YES;
-    cell.remitenteLabel.text = [[(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row] administrador]nombreAdministrador];
+    cell.remitenteLabel.text = [(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row] administrador];
     cell.fechaEmisionLabel.text = dateString;
     
     
@@ -421,51 +412,6 @@
     
 }
 
-#pragma mark -
-#pragma mark Generate dates
-
--(NSDate*)generateStartDate{
-    NSString *stringDate;
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-    
-    NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
-    
-    
-    stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaInicio] ];
-    
-    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
-    NSDate *fechaInicio = [formatter dateFromString:stringDate];
-    
-    return fechaInicio;
-}
-
-
--(NSDate*)generateEndDate{
-    NSString *stringDate;
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-    
-    NSString *stringFromDate = [formatter stringFromDate:self.elementoEscolar.fecha];
-    
-    if([(Evento*)self.elementoEscolar horaFinal]!=nil){
-            stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaFinal] ];
-    }else{
-            stringDate = [NSString stringWithFormat:@"%@ %@",stringFromDate, [(Evento*)self.elementoEscolar horaInicio] ];
-        
-    }
-
-    
-    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
-    NSDate *fechaInicio = [formatter dateFromString:stringDate];
-    
-    return fechaInicio;
-}
 
 
 #pragma mark -
@@ -483,8 +429,8 @@
     
     newEvent.title          = self.elementoEscolar.titulo;
     newEvent.calendar       = self.defaultCalendar;
-    newEvent.startDate      = [self generateStartDate];
-    newEvent.endDate        = [self generateEndDate];
+    newEvent.startDate      = self.elementoEscolar.fecha;
+    newEvent.endDate        = self.elementoEscolar.fechaFin;
     
     addController.event     = newEvent;
     addController.editing   = NO;
