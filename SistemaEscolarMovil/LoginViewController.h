@@ -10,7 +10,7 @@
 #import "JSONHTTPClient.h"
 @class Administrador;
 
-@interface LoginViewController : UIViewController <JSONHTTPClientDelegate>
+@interface LoginViewController : UIViewController
 @property Administrador *administratorData;
 @property (weak, nonatomic) IBOutlet UITextField *usuarioTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;

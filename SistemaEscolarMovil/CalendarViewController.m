@@ -67,7 +67,7 @@
     if (indexPath == nil) {
         NSLog(@"long press on table view but not on a row");
     } else if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        self.elementoEscolar = (ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row];
+        self.elementoEscolar = (Evento*)[self.dayEvents objectAtIndex:indexPath.row];
         [self addEvent:(ElementoEscolar*)[self.dayEvents objectAtIndex:indexPath.row]];
     } else {
         NSLog(@"gestureRecognizer.state = %ld", gestureRecognizer.state);

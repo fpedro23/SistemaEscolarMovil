@@ -5,4 +5,4 @@ pod 'Mantle'
 pod 'AFNetworking'
 pod 'JTCalendar', '~> 1.1'
 pod 'ZeroPush', '~> 2.0'
-
+pod 'AFOAuth2Manager'

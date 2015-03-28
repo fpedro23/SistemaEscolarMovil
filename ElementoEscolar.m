@@ -17,7 +17,7 @@
 {
     // model_property_name : json_field_name
     return @{
-             @"idCircular" : @"field.pk",
+             @"idCircular" : @"pk",
              @"titulo" : @"fields.titulo",
              @"fecha" : @"fields.fechaPublicacion",
              @"contenido" : @"fields.contenido",

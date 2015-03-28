@@ -7,32 +7,25 @@
 //
 
 #import "LoginViewController.h"
-#import "JSONHTTPClient.h"
 #import "Administrador.h"
+#import "AFOAuth2Manager.h"
+
 
 @interface LoginViewController ()
-@property JSONHTTPClient *jsonClient;
+@property AFOAuth2Manager *OAuth2Manager;
 @end
 
 @implementation LoginViewController
-
--(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didFailResponseWithError:(NSError *)error{
-    
-    NSLog(@"Error : %@", [error localizedDescription]);
-}
-
-
--(void)JSONHTTPClientDelegate:(JSONHTTPClient *)client didResponseToLogin:(id)response{
-    self.administratorData = response;
-        [self shouldPerformSegueWithIdentifier:@"showViews" sender:nil];
-}
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
-    _jsonClient.delegate = self;
+
+    NSURL *baseURL = [NSURL URLWithString:@"http://192.168.100.85:8000/"];
+    self.OAuth2Manager =
+    [[AFOAuth2Manager alloc] initWithBaseURL:baseURL
+                                    clientID:@"rPGzzF1xtW4tBd5yG8tzJCZEncEK2e9wpewe4lNe"                                      secret:@"kjLlRgWc5lNIml00zjrxmssUvUeEAe4Rv5P3vI6aBG0DKVV8epU8Fxfo2mclYKVA03NahzqPdTZX0owOfotWckDm6UX6ub3KuHqfcNWlcvGAppJLZyiHz3xvKeYTrgWt"];
     
     // Do any additional setup after loading the view.
 }
@@ -51,31 +44,33 @@
     // Pass the selected object to the new view controller.
 }
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    if ([[self.administratorData success ] isEqualToString:@"false"]){
-        
-        [[[UIAlertView alloc] initWithTitle:@"Error"
-                                    message:@"Los datos de Login Son Incorrectos"
-                                   delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-        return NO;
-    
-        
-    }
-    else{
-        [self performSegueWithIdentifier:@"showViews" sender:sender];
-        
-        return YES;
-
-    }
-    
-}
 
 
 - (IBAction)loginPressed:(id)sender {
-    NSMutableDictionary * dictionary = [NSMutableDictionary new];
-    [dictionary setObject:[_usuarioTextField text] forKey:@"nombre"];
-    [dictionary setObject:[_passwordTextField text] forKey:@"password"];
-    [_jsonClient performPOSTRequestWithParameters:dictionary toServlet:@"mobileLogin" withOptions:nil];
+    
+
+    self.OAuth2Manager.useHTTPBasicAuthentication = NO;
+    
+    
+    [self.OAuth2Manager authenticateUsingOAuthWithURLString:@"/o/token/"
+                                              username:[_usuarioTextField text]
+                                              password:[_passwordTextField text]
+     
+                                                 scope:@"read write"
+                                               success:^(AFOAuthCredential *credential) {
+                                                   NSLog(@"Token: %@", credential.accessToken);
+                                                   [AFOAuthCredential storeCredential:credential
+                                                                       withIdentifier:@"usuario"];
+                                                   [self performSegueWithIdentifier:@"showViews" sender:sender];
+
+                                               }
+                                               failure:^(NSError *error) {
+                                                   NSLog(@"Error: %@", error);
+                                                   [[[UIAlertView alloc] initWithTitle:@"Error"
+                                                                               message:@"Los datos de Login Son Incorrectos"
+                                                                              delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+                                               }];
+    
+
 }
 @end
