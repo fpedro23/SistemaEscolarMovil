@@ -25,7 +25,7 @@
     NSURL *baseURL = [NSURL URLWithString:@"http://192.168.100.85:8000/"];
     self.OAuth2Manager =
     [[AFOAuth2Manager alloc] initWithBaseURL:baseURL
-                                    clientID:@"rPGzzF1xtW4tBd5yG8tzJCZEncEK2e9wpewe4lNe"                                      secret:@"kjLlRgWc5lNIml00zjrxmssUvUeEAe4Rv5P3vI6aBG0DKVV8epU8Fxfo2mclYKVA03NahzqPdTZX0owOfotWckDm6UX6ub3KuHqfcNWlcvGAppJLZyiHz3xvKeYTrgWt"];
+                                    clientID:@"?jrsf4IFEFE@3@;_aWWQyWm=NvUBVA.@dN!kcKwr"                                      secret:@"qaDPVnEdTB;:lcXtsNN4Mb9zuSUc_HQ4;ZZ!qC-ZpWb4r8dpfkzzB0kosHHet@sDo5FW:YJc==CpPknC35L7;!cCly7JF7tao:_RsV9vkQDZoesdxV?5VLJN5?.2rD!;"];
     
     // Do any additional setup after loading the view.
 }

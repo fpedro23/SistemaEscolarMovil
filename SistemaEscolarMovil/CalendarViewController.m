@@ -11,6 +11,8 @@
 #import "ElementoTableViewCell.h"
 #import "EventDetailViewController.h"
 #import "Evento.h"
+#import "AFOAuth2Manager.h"
+
 
 @implementation CalendarViewController
 @synthesize eventsByDate;
@@ -30,7 +32,7 @@
 
 
 -(void)refreshTapped{
-    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"eventos" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:@{@"access_token" :[[AFOAuthCredential retrieveCredentialWithIdentifier:@"usuario"] accessToken]} toServlet:@"api/evento" withOptions:nil];
     [self createEvents];
     [self.calendar reloadData]; // Must be call in viewDidAppear
     [self.eventView reloadData];
@@ -83,7 +85,7 @@
 
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
     _jsonClient.delegate = self;
-    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"eventos" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:@{@"access_token" :[[AFOAuthCredential retrieveCredentialWithIdentifier:@"usuario"] accessToken]} toServlet:@"api/evento" withOptions:nil];
     self.eventView.dataSource = self;
     self.eventView.delegate = self;
     self.calendar = [JTCalendar new];

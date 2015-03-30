@@ -29,6 +29,7 @@
 
 + (NSValueTransformer *)fechaJSONTransformer{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US_POSIX" ]];
     dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
     
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *dateStr) {
@@ -40,6 +41,8 @@
 
 + (NSValueTransformer *)fechaFinJSONTransformer{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US_POSIX" ]];
     dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
     
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *dateStr) {

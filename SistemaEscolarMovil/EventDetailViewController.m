@@ -39,6 +39,12 @@
     
     NSString *stringRemitente = [NSString stringWithFormat:@"Remitente: %@",self.elementoEscolar.administrador];
     
+    if (self.isEvent) {
+        NSString *dateString = [NSDateFormatter localizedStringFromDate:[self.elementoEscolar fecha ] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterShortStyle];
+        
+        [self.labelFecha setText:dateString];
+
+    }else 
     
         [self.labelFecha setText:[NSString stringWithFormat:@"Emitida: %@",[[self dateFormatterLong] stringFromDate:self.elementoEscolar.fecha]]];
     

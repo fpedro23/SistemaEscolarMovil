@@ -10,6 +10,9 @@
 #import "ElementoEscolar.h"
 #import "EventDetailViewController.h"
 #import "ElementoTableViewCell.h"
+#import "AFOAuth2Manager.h"
+
+
 @interface CircularesTableViewController ()
 @property JSONHTTPClient *jsonClient;
 @end
@@ -54,7 +57,7 @@
 
 
 -(void)getLatestCirculars{
-    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"circulares" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:@{@"access_token" :[[AFOAuthCredential retrieveCredentialWithIdentifier:@"usuario"] accessToken]} toServlet:@"api/circular" withOptions:nil];
 }
 
 - (void)viewDidLoad {
@@ -62,8 +65,9 @@
     
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
     _jsonClient.delegate = self;
-    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"circulares" withOptions:nil];
-    //http://192.168.100.36:8080/SistemaEscolar/readCircular?mobile=true
+    [_jsonClient performPOSTRequestWithParameters:@{@"access_token" :[[AFOAuthCredential retrieveCredentialWithIdentifier:@"usuario"] accessToken]} toServlet:@"api/circular" withOptions:nil];
+    
+
     
     updateControl = [[UIRefreshControl alloc] init];
     updateControl.backgroundColor = [UIColor purpleColor];

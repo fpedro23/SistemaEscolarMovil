@@ -11,6 +11,8 @@
 #import "Administrador.h"
 #import "ElementoTableViewCell.h"
 #import "EventDetailViewController.h"
+#import "AFOAuth2Manager.h"
+
 @interface AvisosTableViewController ()
 @property JSONHTTPClient *jsonClient;
 @end
@@ -54,7 +56,7 @@
 
 
 -(void)getLatestAvisos{
-    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"avisos" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:@{@"access_token" :[[AFOAuthCredential retrieveCredentialWithIdentifier:@"usuario"] accessToken]} toServlet:@"api/aviso" withOptions:nil];
 }
 
 
@@ -63,7 +65,7 @@
     
     _jsonClient = [JSONHTTPClient sharedJSONAPIClient];
     _jsonClient.delegate = self;
-    [_jsonClient performPOSTRequestWithParameters:nil toServlet:@"avisos" withOptions:nil];
+    [_jsonClient performPOSTRequestWithParameters:@{@"access_token" :[[AFOAuthCredential retrieveCredentialWithIdentifier:@"usuario"] accessToken]} toServlet:@"api/aviso" withOptions:nil];
     //http://192.168.100.36:8080/SistemaEscolar/readCircular?mobile=true
     
     

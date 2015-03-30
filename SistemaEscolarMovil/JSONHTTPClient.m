@@ -20,7 +20,7 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://10.25.199.90:8000/aristos"]];
+        _sharedJSONAPIClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.168.100.85:8000/aristos"]];
     });
     
     return _sharedJSONAPIClient;
@@ -47,7 +47,7 @@
         
         NSArray *JSONResponse = responseObject;
         //Eventos
-        if ([servletName isEqual:@"eventos"]) {
+        if ([servletName isEqual:@"api/evento"]) {
             NSArray *eventosData = [self deserializeEventsFromJSON:JSONResponse];
             if([self.delegate respondsToSelector:@selector(JSONHTTPClientDelegate:didResponseToEvents:)]){
                 [self.delegate JSONHTTPClientDelegate:self didResponseToEvents:eventosData];

@@ -11,6 +11,8 @@
 #import "Zeropush.h"
 #import "Evento.h"
 #import "LoginViewController.h"
+#import "AFOAuth2Manager.h"
+
 
 @interface HomeViewController ()
 
@@ -28,7 +30,7 @@
     EventDetailViewController *eventoDetail = [self.storyboard
                                                instantiateViewControllerWithIdentifier:@"EventDetail"];
     
-    self.elementoEscolar = (ElementoEscolar*)response;
+    self.elementoEscolar = (ElementoEscolar*)[response firstObject];
     eventoDetail.elementoEscolar = self.elementoEscolar;
     [self.tabBarController setSelectedIndex:0 ];
     [self.navigationController pushViewController:eventoDetail animated:YES];
@@ -39,8 +41,8 @@
     EventDetailViewController *eventoDetail = [self.storyboard
                                                instantiateViewControllerWithIdentifier:@"EventDetail"];
     
-    self.elementoEscolar = (Evento*)response;
-    eventoDetail.elementoEscolar = self.elementoEscolar;
+    self.elementoEscolar = (Evento*)[response firstObject];
+    eventoDetail.elementoEscolar = (Evento*)self.elementoEscolar;
     eventoDetail.isEvent = YES;
     [self.tabBarController setSelectedIndex:0 ];
     [self.navigationController pushViewController:eventoDetail animated:YES];
@@ -86,18 +88,18 @@
     NSMutableDictionary *parameters = [NSMutableDictionary new];
     
     [parameters setObject:[userInfo objectForKey:@"idCircular"] forKey:@"id"];
+    [parameters setObject:[[AFOAuthCredential retrieveCredentialWithIdentifier:@"usuario"] accessToken] forKey:@"access_token"];
     
-
     if([[userInfo objectForKey:@"tipo"]isEqualToString:@"circular"]){
-        [_jsonClient performPOSTRequestWithParameters:parameters toServlet:@"mobileReadCircularByID" withOptions:nil];
+        [_jsonClient performPOSTRequestWithParameters:parameters toServlet:@"api/circular" withOptions:nil];
 
         
     }else if ([[userInfo objectForKey:@"tipo"]isEqualToString:@"aviso"]){
-        [_jsonClient performPOSTRequestWithParameters:parameters toServlet:@"mobileReadAvisoByID" withOptions:nil];
+        [_jsonClient performPOSTRequestWithParameters:parameters toServlet:@"api/aviso" withOptions:nil];
 
         
     }else {
-        [_jsonClient performPOSTRequestWithParameters:parameters toServlet:@"mobileReadEventoByID" withOptions:nil];
+        [_jsonClient performPOSTRequestWithParameters:parameters toServlet:@"api/evento" withOptions:nil];
 
     }
 
