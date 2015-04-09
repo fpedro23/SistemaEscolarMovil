@@ -36,7 +36,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
-    [ZeroPush engageWithAPIKey:@"iosdev_xhtqe3444berxEqfYhgX" delegate:self];
+    [ZeroPush engageWithAPIKey:@"iosprod_8KN8qkdVN2N4empsY6Kk" delegate:self];
 
     //now ask the user if they want to recieve push notifications. You can place this in another part of your app.
     [[ZeroPush shared] resetBadge];
