@@ -22,10 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSURL *baseURL = [NSURL URLWithString:@"http://192.168.100.85:8000/"];
+    NSURL *baseURL = [NSURL URLWithString:@"http://edicomex.com.mx:8001/"];
     self.OAuth2Manager =
     [[AFOAuth2Manager alloc] initWithBaseURL:baseURL
-                                    clientID:@"?jrsf4IFEFE@3@;_aWWQyWm=NvUBVA.@dN!kcKwr"                                      secret:@"qaDPVnEdTB;:lcXtsNN4Mb9zuSUc_HQ4;ZZ!qC-ZpWb4r8dpfkzzB0kosHHet@sDo5FW:YJc==CpPknC35L7;!cCly7JF7tao:_RsV9vkQDZoesdxV?5VLJN5?.2rD!;"];
+                                    clientID:@"7BIPYJfcu6KnPKHD7T38kKl7PStLs2wumB6tWXJN"                                      secret:@"qp91aGv0LIo5WTe30dT6D5ewOoVEPSwNm2Cx7H3L0M6peF0Wj1SKYuaRWlRqYlLFFUhjHAJa3iUeVW10V4q94ccJUrRkT4IxhDLQ3M1eB1sZwrpyCYOdgBJqgdJ3z4iQ"];
     
     // Do any additional setup after loading the view.
 }
